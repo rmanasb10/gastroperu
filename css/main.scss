@@ -1,0 +1,31 @@
+@use 'variables';
+@use 'global';
+@use 'header';
+@use 'footer';
+
+main {
+   @extend .container;
+   max-width: 100%;
+   background-color: variables.$colorBody;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   h1 {
+      color: variables.$colorSecundario;
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: "Playfair Display";
+      text-align: center;
+      line-height: 2rem;
+      margin-top: 10px;
+   }
+   p {
+      color: variables.$colorSecundario;
+      padding-top: 10px;
+      padding-bottom: 40px;
+      padding-left: 20px;
+      padding-right: 20px;
+      font-family: "Playfair Display";
+      font-size: 1rem;
+      text-align: justify;
+   }
+}
