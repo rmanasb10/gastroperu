@@ -24,3 +24,28 @@
    padding: 0;
    width: 100%;
 }
+
+@media screen and (min-width: 460px) and (max-width: 1024px) {
+
+   * {
+      font-size: 24px;
+   }
+
+   .container {
+      min-width: 460px;
+      max-width: 1023px;
+   }
+}
+
+/* Estilo para dispositivos de escritorio */
+@media screen and (min-width: 1025px) {
+
+   * {
+      font-size: 28px;
+   }
+
+   .container {
+      width: 100vw;
+      max-width: 100%;
+   }
+}
