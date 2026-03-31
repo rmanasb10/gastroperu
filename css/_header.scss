@@ -1,0 +1,93 @@
+@use 'variables';
+@use 'global';
+
+header {
+   @extend .container;
+   background-color: variables.$colorPrincipal;
+   display: flex;
+   flex-direction: column;
+   a {
+      background-image: url("../img/GastroPeru.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 100px;
+      margin-top: 20px;
+      text-decoration: none;
+      width: auto;
+   }
+   nav {
+      ul {
+         display: flex;
+         flex-direction: row;
+         justify-content:center;
+         gap: 15px;
+         list-style-type: none;
+         padding-bottom: 1rem;
+         li {
+            a {
+            background-image: none;
+            color: variables.$colorSecundario;
+            font-size: 0.75rem;
+            padding-right: 25px;
+            position: relative;
+            text-decoration: none;
+            }
+            a:hover {
+               color: variables.$colorEnlace;
+            }
+         }
+         li:not(:last-child) 
+            a::after {
+               background-color: variables.$colorEnlace;
+               border-radius: 50%;
+               content: "";
+               display: inline-block;
+               height: 6px;
+               position: absolute;
+               right: 0px;
+               transform: translateY(-50%);
+               top: 50%;
+               width: 6px;
+         }
+      }
+   }
+}
+
+@media screen and (min-width: 460px) and (max-width: 1024px) {
+   header {
+      padding-left: 50px;
+      padding-right: 50px;
+      a {
+         height: 150px;
+      }
+      nav {
+         ul {
+            li {
+               a {
+                  font-size: 1rem;
+               }
+            }
+         }
+      }
+   }
+}
+
+@media screen and (min-width: 1025px) {
+   header {
+      padding-left: 100px;
+      padding-right: 100px;
+      a {
+         height: 200px;
+      }
+      nav {
+         ul {
+            li {
+               a {
+                  font-size: 1rem;
+               }
+            }
+         }
+      }
+   }
+}
