@@ -8,13 +8,15 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="/css/main.scss">
-      <link rel="icon" href="/img/favicon.ico">
+      <link rel="stylesheet" href="/src/css/main.scss">
+      <link rel="icon" href="/src/img/favicon.ico">
+      <script type="module" src="/src/script/script.js"></script>
    </head>
    <body class="container">
       <include src="./componentes/header.html"></include>
       <main class="receta">
          <h1>Ceviche</h1>
+         <div id="carruselCeviche"></div>
          <section>
             <div>
                <div>
@@ -40,6 +42,10 @@
                   </ol>
                </div>
             </div>
+            <figure class="imagenPrincipal">
+               <img src="/src/img/ceviche.png" alt="Imagen de ceviche" width="450" height="315">
+               <figcaption>Imagen de <a href="https://unsplash.com/es/@weekendtripcreator">Lisa Riabinina</a> en <a href="https://unsplash.com/">Unsplash</a></figcaption>
+            </figure>
             <div>
                <div>
                   <h2>Consejos y variaciones</h2>
