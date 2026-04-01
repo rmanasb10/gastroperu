@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "source": "./index.html",
+  "browserslist": "> 0.5%, last 10 years, not dead",
   "scripts": {
     "build": "npm-run-all clean parcel:build",
     "clean": "rimraf dist .parcel-cache",
