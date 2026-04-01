@@ -36,6 +36,9 @@ header {
             a:hover {
                color: variables.$colorEnlace;
             }
+            .active {
+               color: variables.$colorEnlace;
+            }
          }
          li:not(:last-child) 
             a::after {
@@ -75,8 +78,8 @@ header {
 
 @media screen and (min-width: 1025px) {
    header {
-      padding-left: 100px;
-      padding-right: 100px;
+      padding-left: 300px;
+      padding-right: 300px;
       a {
          height: 200px;
       }

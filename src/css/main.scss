@@ -105,6 +105,10 @@ main {
    h1 {
    text-align: center;
    }
+   #fechaActual {
+      text-align: end;
+      font-size: 0.75rem;
+   }
    .splide {
       max-width: 100%;
       margin: 0 auto;
@@ -310,6 +314,8 @@ main {
       }
    }
    .receta {
+      padding-left: 50px;
+      padding-right: 50px;
       section {
          .imagenPrincipal {
             img {
@@ -335,8 +341,8 @@ main {
 
 @media screen and (min-width: 1025px) {
    main {
-      padding-left: 100px;
-      padding-right: 100px;
+      padding-left: 300px;
+      padding-right: 300px;
       h1 {
          margin-top: 50px;
          font-size: 2rem;
@@ -370,6 +376,8 @@ main {
       }
    }
    .receta {
+      padding-left: 300px;
+      padding-right: 300px;
       section {
          .imagenPrincipal {
             img {
@@ -378,10 +386,17 @@ main {
             }
          }
       }
+      iframe {
+         margin-left: 100px;
+         margin-right: 100px;
+         margin-bottom: 100px;
+         height: 600px;
+         width: 840px;
+      }
    }
    .links {
-      padding-left: 100px;
-      padding-right: 100px;
+      padding-left: 300px;
+      padding-right: 300px;
       section {
          ul {
             padding-left: 100px;

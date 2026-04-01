@@ -1,5 +1,7 @@
 import Splide from '@splidejs/splide'
 import '@splidejs/splide/dist/css/splide.min.css'
+import {format} from 'date-fns';
+import {es} from 'date-fns/locale';
 
 import imagenIngredientesCeviche from 'url:../img/ingredientes_ceviche.png'
 import imagenPescadoCrudo from 'url:../img/pescado_crudo.png'
@@ -63,14 +65,27 @@ function carruselImagenes(id, imagenes, opciones={}) {
    return splide;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-   if (document.getElementById('carruselCeviche')) {
+document.addEventListener("DOMContentLoaded", () => {
+   const rutaActual = window.location.pathname;
+   const barraNavegación = document.querySelectorAll(".nav-item a");
+   barraNavegación.forEach(item => {
+      if (item.getAttribute("href") === rutaActual || item.href === window.location.href) {
+         item.classList.add('active');
+      }
+   })
+   const fechaActual = document.getElementById("fechaActual");
+   const hoy = Date.now();
+   const formatoFecha = format(hoy, "d 'de' MMMM 'de' yyyy", {
+      locale: es
+   })
+   fechaActual.innerText = `Receta actualizada a ${formatoFecha}`;
+   if (document.getElementById("carruselCeviche")) {
       carruselImagenes("carruselCeviche", imagenesCeviche, {
          interval: 5000,
          arrows: true
       });
    }
-   if (document.getElementById('carruselLomoSaltado')) {
+   if (document.getElementById("carruselLomoSaltado")) {
       carruselImagenes("carruselLomoSaltado", imagenesLomoSaltado, {
          interval: 5000,
          arrows: true
