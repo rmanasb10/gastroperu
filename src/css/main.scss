@@ -78,18 +78,12 @@ main {
                }
             }
          }
-         div {
+         p {
             width: 100%;
-            display: inline-block;
-            justify-content: flex-start;
-            background-color: variables.$colorBody;
-            p {
-               width: 100%;
-               text-align: start;
-               color: variables.$colorSecundario;
-               font-size: 0.75rem;
-               font-family: "Inter";
-            }
+            text-align: start;
+            color: variables.$colorSecundario;
+            font-size: 0.75rem;
+            font-family: "Inter";
          }
       }
    }
@@ -125,66 +119,42 @@ main {
       display: flex;
       flex-direction: column;
       gap: 20px;
-   }
-      div {
-         display: flex;
-         flex-direction: row;
-         justify-content: center;
-         align-items: center;
-         gap: 10px;
+      h2 {
+         text-align: center;
+         font-size: 1rem;
+         font-family: "Playfair Display";
       }
-         div {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            h2 {
-               text-align: center;
-               font-size: 1rem;
-               font-family: "Playfair Display";
-            }
-            ul {
-               list-style-type: none;
-               padding: 0;
-               padding-left: 20px;
-               padding-right: 20px;
-               li {
-                  color: variables.$colorSecundario;
-                  font-family: "Inter";
-                  font-size: 0.75rem;
-                  text-align: start;
-               }
-            }
-            ol {
-               padding: 0;
-               padding-left: 20px;
-               padding-right: 20px;
-               li {
-                  color: variables.$colorSecundario;
-                  font-family: "Inter";
-                  font-size: 0.75rem;
-                  text-align: start;
-               }
-            }
-            div {
-               display: flex;
-               flex-direction: column;
-               p {
-                  color: variables.$colorSecundario;
-                  font-family: "Inter";
-                  font-size: 0.75rem;
-                  text-align: start;
-                  padding: 0;
-                  padding-left: 20px;
-               }
-            }
+      ul {
+         list-style-type: none;
+         padding: 0;
+         padding-left: 20px;
+         padding-right: 20px;
+         li {
+            color: variables.$colorSecundario;
+            font-family: "Inter";
+            font-size: 0.75rem;
+            text-align: start;
          }
-   iframe {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      height: auto;
-      align-self: center;
-      padding-left: 20px;
-      padding-right: 20px;
+      }
+      ol {
+         padding: 0;
+         padding-left: 20px;
+         padding-right: 20px;
+         li {
+            color: variables.$colorSecundario;
+            font-family: "Inter";
+            font-size: 0.75rem;
+            text-align: start;
+         }
+      }
+      p {
+         color: variables.$colorSecundario;
+         font-family: "Inter";
+         font-size: 0.75rem;
+         text-align: start;
+         padding: 0;
+         padding-left: 20px;
+      }
    }
    .imagenPrincipal {
       background-color: variables.$colorBody;
@@ -212,6 +182,14 @@ main {
             font-size: inherit;
          }
       }
+   }
+   iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      height: auto;
+      align-self: center;
+      padding-left: 20px;
+      padding-right: 20px;
    }
 }
 
@@ -316,12 +294,10 @@ main {
    .receta {
       padding-left: 50px;
       padding-right: 50px;
-      section {
-         .imagenPrincipal {
-            img {
-               width: 250px; 
-               height: 250px;
-            }
+      .imagenPrincipal {
+         img {
+            width: 250px; 
+            height: 250px;
          }
       }
    }
@@ -378,12 +354,10 @@ main {
    .receta {
       padding-left: 300px;
       padding-right: 300px;
-      section {
-         .imagenPrincipal {
-            img {
-               width: 450px; 
-               height: 450px;
-            }
+      .imagenPrincipal {
+         img {
+            width: 450px; 
+            height: 450px;
          }
       }
       iframe {
