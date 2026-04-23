@@ -60,6 +60,7 @@ main {
             img {
                border: 1px solid variables.$colorSecundario;
                border-radius: 50%;
+               object-fit: cover;
             }
             figcaption {
                color: variables.$colorSecundario;
