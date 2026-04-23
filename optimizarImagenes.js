@@ -4,7 +4,7 @@ import path from 'path'
 
 const configuracion = {
    "movil": 300,
-   "tableta": 400,
+   "tablet": 400,
    "escritorio": 500
 }
 const directorio = "./src/img"
@@ -29,7 +29,7 @@ async function optimizarImagenes() {
             .toFile(path.join(directorio, `${nombreArchivo}-movil.webp`));
          // Generar Versión Tableta
          await sharp(rutaArchivo)
-            .resize({ width: configuracion.tableta, height: configuracion.tableta, fit: "cover", withoutEnlargement: true })
+            .resize({ width: configuracion.tablet, height: configuracion.tableta, fit: "cover", withoutEnlargement: true })
             .webp({ quality: 80 })
             .toFile(path.join(directorio, `${nombreArchivo}-tablet.webp`));
          // Generar Versión Escritorio
