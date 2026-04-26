@@ -73,6 +73,7 @@ main {
                font-size: 1rem;
                line-height: 1rem;
                text-align: center;
+               animation: aparicion 2s ease-in-out infinite;
                a {
                   color: inherit;
                   font-family: inherit;
@@ -256,6 +257,21 @@ main {
       ul:last-child {
          padding-bottom: 20px;
       }
+   }
+}
+
+@keyframes aparicion {
+   0% {
+      transform: scale(0.5);
+      opacity: 0.25;
+   }
+   50% {
+      transform: scale(1);
+      opacity: 1;
+   }
+   100% {
+      transform: scale(1.5);
+      opacity: 0.5;
    }
 }
 
