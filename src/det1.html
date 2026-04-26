@@ -39,7 +39,17 @@
             </ol>
          </section>
          <figure class="imagenPrincipal">
-            <img src="img/ceviche.png" alt="Imagen de ceviche" width="450" height="315">
+            <picture>
+               <source media="(max-width: 459px)"
+                  srcset="img/ceviche-para-movil.webp"
+                  type="image/webp">
+               <source media="(max-width: 1024px)"
+                  srcset="img/ceviche-para-tablet.webp"
+                  type="image/webp">
+               <source srcset="img/ceviche-para-escritorio.webp"
+                  type="image/webp">
+               <img src="img/ceviche.png" alt="Imagen de ceviche" width="450" height="315">
+            </picture>
             <figcaption>Imagen de <a href="https://unsplash.com/es/@weekendtripcreator">Lisa Riabinina</a> en <a href="https://unsplash.com/">Unsplash</a></figcaption>
          </figure>
          <section>
