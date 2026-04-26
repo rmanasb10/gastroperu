@@ -17,20 +17,26 @@ main {
       text-align: center;
       margin-top: 10px;
    }
+   .intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      font-family: "Playfair Display";
+      font-size: 1rem;
+      text-align: justify;
+   }
    p {
       color: variables.$colorSecundario;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      padding-left: 20px;
-      padding-right: 20px;
       font-family: "Playfair Display";
       font-size: 1rem;
       text-align: justify;
    }
    .emblema {
       display: block;
-      width: 400px;
-      margin: 0 auto;
+      width: 200px;
+      margin-top: 30px;
    }
    section {
       width: 100%;
