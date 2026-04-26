@@ -9,7 +9,10 @@ const configuracion = {
 }
 const directorio = "./src/img"
 
-optimizarImagenes();
+// optimizarImagenes();
+// optimizarLogotipo(`${directorio}/GastroPeru.png`);
+// recortarImagen("ceviche.png");
+// recortarImagen("lomo_saltado.png")
 
 async function optimizarImagenes() {
    await fs.mkdir(directorio, { recursive: true });
@@ -41,4 +44,47 @@ async function optimizarImagenes() {
          console.error(`Error procesando ${archivo}:`, err);
       }
    }
+}
+
+async function optimizarLogotipo(logotipo) {
+   await sharp(logotipo)
+   .webp({quality:90})
+   .toFile(`${directorio}/GastroPeru.webp`);
+
+   const metadata = await sharp(logotipo).metadata();
+   await sharp(logotipo)
+   .resize(metadata.width * 2, metadata.height * 2)
+   .webp({quality: 90})
+   .toFile(`${directorio}/GastroPeru-2x.webp`);
+
+   await sharp(logotipo)
+   .png({compressionLeve: 9})
+   .toFile(`${directorio}/GastroPeru-optimizado.png`);
+}
+
+async function recortarImagen(imagen) {
+   const nombreImagen = imagen.split(".")
+   await sharp(`${directorio}/${imagen}`)
+   .resize(460, 460, {
+      fit: "cover",
+      position: "centre"
+   })
+   .webp({quality: 85})
+   .toFile(`${directorio}/${nombreImagen[0]}-para-movil.webp`);
+
+   await sharp(`${directorio}/${imagen}`)
+   .resize(1024, 600, {
+      fit: "cover",
+      position: "centre"
+   })
+   .webp({quality: 85})
+   .toFile(`${directorio}/${nombreImagen[0]}-para-tablet.webp`);
+
+   await sharp(`${directorio}/${imagen}`)
+   .resize(1200, 500, {
+      fit: "cover",
+      position: "centre"
+   })
+   .webp({quality: 85})
+   .toFile(`${directorio}/${nombreImagen[0]}-para-escritorio.webp`); 
 }
