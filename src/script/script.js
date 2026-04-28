@@ -4,51 +4,24 @@ import {format} from 'date-fns';
 import {es} from 'date-fns/locale';
 
 import imagenIngredientesCeviche from 'url:../img/ingredientes_ceviche.png'
-import imagenIngredientesCevicheMovi from 'url:../img/ingredientes_ceviche-movil.webp'
-import imagenIngredientesCevicheTablet from 'url:../img/ingredientes_ceviche-tablet.webp'
-import imagenIngredientesCevicheEscritorio from 'url:../img/ingredientes_ceviche-escritorio.webp'
 import imagenPescadoCrudo from 'url:../img/pescado_crudo.png'
-import imagenPescadoCrudoMovil from 'url:../img/pescado_crudo-movil.webp'
-import imagenPescadoCrudoTablet from 'url:../img/pescado_crudo-tablet.webp'
-import imagenPescadoCrudoEscritorio from 'url:../img/pescado_crudo-escritorio.webp'
 import imagenCevicheChoclo from 'url:../img/ceviche_choclo.png'
-import imagenCevicheChocloMovil from 'url:../img/ceviche_choclo-movil.webp'
-import imagenCevicheChocloTablet from 'url:../img/ceviche_choclo-tablet.webp'
-import imagenCevicheChocloEscritorio from 'url:../img/ceviche_choclo-escritorio.webp'
 
 import imagenCorteCarnes from 'url:../img/corte_carnes.png'
-import imagenCorteCarnesMovil from 'url:../img/corte_carnes-movil.webp'
-import imagenCorteCarnesTablet from 'url:../img/corte_carnes-tablet.webp'
-import imagenCorteCarnesEscritorio from 'url:../img/corte_carnes-escritorio.webp'
 import imagenAjis from 'url:../img/ajis.png'
-import imagenAjisMovil from 'url:../img/ajis-movil.webp'
-import imagenAjisTablet from 'url:../img/ajis-tablet.webp'
-import imagenAjisEscritorio from 'url:../img/ajis-escritorio.webp'
 import imagenArrozBlanco from 'url:../img/arroz_blanco.png'
-import imagenArrozBlancoMovil from 'url:../img/arroz_blanco-movil.webp'
-import imagenArrozBlancoTablet from 'url:../img/arroz_blanco-tablet.webp'
-import imagenArrozBlancoEscritorio from 'url:../img/arroz_blanco-escritorio.webp'
 
 const imagenesCeviche = [
    {
-      defecto: imagenIngredientesCeviche,
-      movil: imagenIngredientesCevicheMovi,
-      tablet: imagenIngredientesCevicheTablet,
-      escritorio: imagenIngredientesCevicheEscritorio,
+      url: imagenIngredientesCeviche,
       alt: "Imagen de los ingredientes de un ceviche"
    },
    {
-      defecto: imagenPescadoCrudo,
-      movil: imagenPescadoCrudoMovil,
-      tablet: imagenPescadoCrudoTablet,
-      escritorio: imagenPescadoCrudoEscritorio,
+      url: imagenPescadoCrudo,
       alt: "Imagen de un pescado fresco crudo"
    },
    {
-      defecto: imagenCevicheChoclo,
-      movil: imagenCevicheChocloMovil,
-      tablet: imagenCevicheChocloTablet,
-      escritorio: imagenCevicheChocloEscritorio,
+      url: imagenCevicheChoclo,
       alt: "Imagen de un ceviche con choclo"
    }
 ]
@@ -56,23 +29,14 @@ const imagenesCeviche = [
 const imagenesLomoSaltado = [
    {
       url: imagenCorteCarnes,
-      movil: imagenCorteCarnesMovil,
-      tablet: imagenCorteCarnesTablet,
-      escritorio: imagenCorteCarnesEscritorio,
       alt: "Imagen de diferentes cortes en una pieza de carne"
    },
    {
       url: imagenAjis,
-      movil: imagenAjisMovil,
-      tablet: imagenAjisTablet,
-      escritorio: imagenAjisEscritorio,
       alt: "Imagen de varios ajís"
    },
    {
       url: imagenArrozBlanco,
-      movil: imagenArrozBlancoMovil,
-      tablet: imagenArrozBlancoTablet,
-      escritorio: imagenArrozBlancoEscritorio,
       alt: "Imagen de arroz blanco cocido"
    }
 ]
@@ -85,9 +49,9 @@ function carruselImagenes(id, imagenes, opciones={}) {
             <ul class="splide__list">
                ${imagenes.map(imagen => `
                   <li class="splide__slide">
-                     <img srcset="${imagen.movil} 460w, ${imagen.tablet} 1024w, ${imagen.escritorio} 1025w"
+                     <img srcset="${imagen.url}?as=webp 460w, ${imagen.url}?as=webp 1024w, ${imagen.url}?as=webp 1025w"
                      sizes="(max-width: 460px) 460px, (max-width: 1024px) 1024px, 1025px"
-                     src="${imagen.defecto}" alt="${imagen.alt}" style="width:100%; display:block;">
+                     src="${imagen.url}" alt="${imagen.alt}" style="width:100%; display:block;">
                   </li>`
                ).join('')}
             </ul>
