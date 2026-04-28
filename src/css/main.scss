@@ -16,6 +16,9 @@ main {
       font-family: "Playfair Display";
       text-align: center;
       margin-top: 10px;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
    }
    .intro {
       display: flex;
@@ -23,15 +26,16 @@ main {
       justify-content: center;
       align-items: center;
       gap: 20px;
-      font-family: "Playfair Display";
-      font-size: 1rem;
-      text-align: justify;
+      padding-left: 20px;
+      padding-right: 20px;
    }
    p {
       color: variables.$colorSecundario;
       font-family: "Playfair Display";
       font-size: 1rem;
       text-align: justify;
+      padding-left: 20px;
+      padding-right: 20px;
    }
    .emblema {
       display: block;
@@ -42,8 +46,10 @@ main {
       width: 100%;
       display: flex;
       flex-direction: column;
+      gap: 20px;
       padding-left: 20px;
       padding-right: 20px;
+      margin-top: 20px;
       font-family: "Inter";
       h2 {
          font-family: "Playfair Display";
@@ -51,7 +57,7 @@ main {
          font-weight: 700;
          text-align: center;
          color: variables.$colorSecundario;
-         margin-top: 10px;
+         margin-top: 20px;
          margin-bottom: 10px;
       }
       div {
@@ -60,6 +66,7 @@ main {
          flex-direction: row;
          align-content: flex-start;
          align-items: first baseline;
+         gap: 10px;
          font-family: "Inter";
          figure {
             background-color: variables.$colorBody;
@@ -71,8 +78,6 @@ main {
             img {
                object-fit: contain;
                clip-path: circle(50% at 50% 40%);
-               width: 100%;
-               height: 100%;
             }
             figcaption {
                color: variables.$colorSecundario;
@@ -111,7 +116,7 @@ main {
    align-items: center;
    gap: 20px;
    h1 {
-   text-align: center;
+      text-align: center;
    }
    #fechaActual {
       text-align: end;
@@ -265,6 +270,47 @@ main {
          padding-bottom: 20px;
       }
    }
+}  
+
+.galeria {
+   @extend .container;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   gap: 20px;
+   padding-left: 20px;
+   padding-right: 20px;
+   width: 100%;
+   p {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      color: variables.$colorSecundario;
+   }
+   div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      figure {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         figcaption {
+            color: variables.$colorSecundario;
+            font-family: "Inter";
+            font-size: 0.75rem;
+            text-align: center;
+         }
+         img {
+            width: auto;
+            height: auto;
+            object-fit: contain;
+         }
+      }
+   }
 }
 
 @keyframes aparicion {
@@ -407,6 +453,38 @@ main {
       }
       section:last-of-type {
          margin-bottom: 100px;
+      }
+   }
+   .galeria {
+      width: 100%;
+         padding-left: 100px;
+         padding-right: 100px;
+      div {
+         display: flex;
+         flex-direction: column;   // ← Cada figure ocupa su propia fila
+         gap: 60px;                // ← Espacio entre figures
+         width: 100%;
+
+         figure {
+            display: flex;
+            flex-direction: row;   // ← Caption izquierda, imagen derecha
+            align-items: center;
+            gap: 40px;
+            width: 100%;
+
+            figcaption {
+               color: variables.$colorSecundario;
+               font-family: "Inter";
+               font-size: 1rem;
+               text-align: left;
+               width: 50%;         // ← Texto ocupa mitad izquierda
+            }
+            img {
+               width: 50%;         // ← Imagen ocupa mitad derecha
+               height: auto;
+               object-fit: contain;
+            }
+         }
       }
    }
 }
