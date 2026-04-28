@@ -69,9 +69,10 @@ main {
             justify-items: center;
             gap: 5px;
             img {
-               border: 1px solid variables.$colorSecundario;
-               border-radius: 50%;
-               object-fit: cover;
+               object-fit: contain;
+               clip-path: circle(50% at 50% 40%);
+               width: 100%;
+               height: 100%;
             }
             figcaption {
                color: variables.$colorSecundario;
