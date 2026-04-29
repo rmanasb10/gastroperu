@@ -49,7 +49,8 @@ function carruselImagenes(id, imagenes, opciones={}) {
             <ul class="splide__list">
                ${imagenes.map(imagen => `
                   <li class="splide__slide">
-                     srcset="${imagen.url}as=webp&width=460&quality=80 460w, ${imagen.url}as=webp&width=1024&quality=80 1024w, ${imagen.url}as=webp&width=1920&quality=75 1920w, ${imagen.url}as=webp&width=3840&quality=70 3840w"
+                     <img
+                     srcset="${imagen.url}?as=webp&width=460&quality=80 460w, ${imagen.url}?as=webp&width=1024&quality=80 1024w, ${imagen.url}?as=webp&width=1920&quality=75 1920w, ${imagen.url}?as=webp&width=3840&quality=70 3840w"
                      sizes="(min-width: 1200px) 1920px, (min-width: 1024px) 1024px, 460px"
                      src="${imagen.url}" alt="${imagen.alt}" style="width:100%; display:block;">
                   </li>`
