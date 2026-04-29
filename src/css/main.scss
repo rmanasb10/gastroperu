@@ -281,6 +281,7 @@ main {
    padding-left: 20px;
    padding-right: 20px;
    width: 100%;
+   box-sizing: border-box;
    p {
       text-align: center;
       margin-top: 30px;
@@ -298,6 +299,8 @@ main {
          display: flex;
          flex-direction: column;
          justify-content: center;
+         align-items: center;
+         width: 100%;
          figcaption {
             color: variables.$colorSecundario;
             font-family: "Inter";
@@ -305,9 +308,10 @@ main {
             text-align: center;
          }
          img {
-            width: auto;
+            max-width: 100%;
             height: auto;
             object-fit: contain;
+            display: block;
          }
       }
    }
@@ -457,17 +461,18 @@ main {
    }
    .galeria {
       width: 100%;
-         padding-left: 100px;
-         padding-right: 100px;
+      padding-left: 100px;
+      padding-right: 100px;
+      box-sizing: border-box;
       div {
          display: flex;
-         flex-direction: column;   // ← Cada figure ocupa su propia fila
-         gap: 60px;                // ← Espacio entre figures
+         flex-direction: column;
+         gap: 60px;
          width: 100%;
 
          figure {
             display: flex;
-            flex-direction: row;   // ← Caption izquierda, imagen derecha
+            flex-direction: row;
             align-items: center;
             gap: 40px;
             width: 100%;
@@ -477,12 +482,15 @@ main {
                font-family: "Inter";
                font-size: 1rem;
                text-align: left;
-               width: 50%;         // ← Texto ocupa mitad izquierda
+               flex: 0 0 30%;
+               min-width: 0;
             }
             img {
-               width: 50%;         // ← Imagen ocupa mitad derecha
+               flex: 1 1 auto;
+               max-width: 70%;
                height: auto;
                object-fit: contain;
+               display: block;
             }
          }
       }
