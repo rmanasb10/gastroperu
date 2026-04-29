@@ -3,40 +3,62 @@ import '@splidejs/splide/dist/css/splide.min.css'
 import {format} from 'date-fns';
 import {es} from 'date-fns/locale';
 
-import imagenIngredientesCeviche from 'url:../img/ingredientes_ceviche.png'
-import imagenPescadoCrudo from 'url:../img/pescado_crudo.png'
-import imagenCevicheChoclo from 'url:../img/ceviche_choclo.png'
+import imagenIngredientesCeviche460 from 'url:../img/ingredientes_ceviche.png?as=webp&width=460&quality=80'
+import imagenIngredientesCeviche1024 from 'url:../img/ingredientes_ceviche.png?as=webp&width=1024&quality=80'
+import imagenIngredientesCeviche1920 from 'url:../img/ingredientes_ceviche.png?as=webp&width=1920&quality=75'
 
-import imagenCorteCarnes from 'url:../img/corte_carnes.png'
-import imagenAjis from 'url:../img/ajis.png'
-import imagenArrozBlanco from 'url:../img/arroz_blanco.png'
+import imagenPescadoCrudo460 from 'url:../img/pescado_crudo.png?as=webp&width=460&quality=80'
+import imagenPescadoCrudo1024 from 'url:../img/pescado_crudo.png?as=webp&width=1024&quality=80'
+import imagenPescadoCrudo1920 from 'url:../img/pescado_crudo.png?as=webp&width=1920&quality=75'
+
+import imagenCevicheChoclo460 from 'url:../img/ceviche_choclo.png?as=webp&width=460&quality=80'
+import imagenCevicheChoclo1024 from 'url:../img/ceviche_choclo.png?as=webp&width=1024&quality=80'
+import imagenCevicheChoclo1920 from 'url:../img/ceviche_choclo.png?as=webp&width=1920&quality=75'
+
+import imagenCorteCarnes460 from 'url:../img/corte_carnes.png?as=webp&width=460&quality=80'
+import imagenCorteCarnes1024 from 'url:../img/corte_carnes.png?as=webp&width=1024&quality=80'
+import imagenCorteCarnes1920 from 'url:../img/corte_carnes.png?as=webp&width=1920&quality=75'
+
+import imagenAjis460 from 'url:../img/ajis.png?as=webp&width=460&quality=80'
+import imagenAjis1024 from 'url:../img/ajis.png?as=webp&width=1024&quality=80'
+import imagenAjis1920 from 'url:../img/ajis.png?as=webp&width=1920&quality=75'
+
+import imagenArrozBlanco460 from 'url:../img/arroz_blanco.png?as=webp&width=460&quality=80'
+import imagenArrozBlanco1024 from 'url:../img/arroz_blanco.png?as=webp&width=1024&quality=80'
+import imagenArrozBlanco1920 from 'url:../img/arroz_blanco.png?as=webp&width=1920&quality=75'
 
 const imagenesCeviche = [
    {
-      url: imagenIngredientesCeviche,
+      srcset: `${imagenIngredientesCeviche460} 460w, ${imagenIngredientesCeviche1024} 1024w, ${imagenIngredientesCeviche1920} 1920w`,
+      src: imagenIngredientesCeviche1920,
       alt: "Imagen de los ingredientes de un ceviche"
    },
    {
-      url: imagenPescadoCrudo,
+      srcset: `${imagenPescadoCrudo460} 460w, ${imagenPescadoCrudo1024} 1024w, ${imagenPescadoCrudo1920} 1920w`,
+      src: imagenPescadoCrudo1920,
       alt: "Imagen de un pescado fresco crudo"
    },
    {
-      url: imagenCevicheChoclo,
+      srcset: `${imagenCevicheChoclo460} 460w, ${imagenCevicheChoclo1024} 1024w, ${imagenCevicheChoclo1920} 1920w`,
+      src: imagenCevicheChoclo1920,
       alt: "Imagen de un ceviche con choclo"
    }
 ]
 
 const imagenesLomoSaltado = [
    {
-      url: imagenCorteCarnes,
+      srcset: `${imagenCorteCarnes460} 460w, ${imagenCorteCarnes1024} 1024w, ${imagenCorteCarnes1920} 1920w`,
+      src: imagenCorteCarnes1920,
       alt: "Imagen de diferentes cortes en una pieza de carne"
    },
    {
-      url: imagenAjis,
+      srcset: `${imagenAjis460} 460w, ${imagenAjis1024} 1024w, ${imagenAjis1920} 1920w`,
+      src: imagenAjis1920,
       alt: "Imagen de varios ajís"
    },
    {
-      url: imagenArrozBlanco,
+      srcset: `${imagenArrozBlanco460} 460w, ${imagenArrozBlanco1024} 1024w, ${imagenArrozBlanco1920} 1920w`,
+      src: imagenArrozBlanco1920,
       alt: "Imagen de arroz blanco cocido"
    }
 ]
@@ -50,7 +72,7 @@ function carruselImagenes(id, imagenes, opciones={}) {
                ${imagenes.map(imagen => `
                   <li class="splide__slide">
                      <img
-                     srcset="${imagen.url}?as=webp&width=460&quality=80 460w, ${imagen.url}?as=webp&width=1024&quality=80 1024w, ${imagen.url}?as=webp&width=1920&quality=75 1920w, ${imagen.url}?as=webp&width=3840&quality=70 3840w"
+                     srcset="${imagen.srcset}
                      sizes="(min-width: 1200px) 1920px, (min-width: 1024px) 1024px, 460px"
                      src="${imagen.url}" alt="${imagen.alt}" style="width:100%; display:block;">
                   </li>`
