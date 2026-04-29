@@ -5,6 +5,8 @@ header {
    background-color: variables.$colorPrincipal;
    display: flex;
    flex-direction: column;
+   padding-left: 20px;
+   padding-right: 20px;
    a {
       margin-top: 20px;
       text-decoration: none;
