@@ -1,6 +1,5 @@
 {
    "webp": {
-      "nearLossless": true,
      "quality": 80
    }
 }

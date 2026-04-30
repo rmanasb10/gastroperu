@@ -41,6 +41,46 @@ main {
       display: block;
       width: 200px;
       margin-top: 30px;
+      .emblema-texto {
+         font-family: "Georgia, serif";
+         font-size: 140px;
+         font-weight: bold;
+         text-anchor: middle;
+         dominant-baseline: central;
+         letter-spacing: 4px;
+         fill: #B81515;
+         animation: degradacion 6s ease-in-out infinite;
+      }
+   }
+   .recetaDia {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 50px;
+      h2 {
+         color: variables.$colorSecundario;
+         font-size: 1.5rem;
+         font-weight: 900;
+      }
+      p {
+         color: variables.$colorSecundario;
+         font-size: 1rem;
+         a {
+            color: inherit;
+            text-decoration: none;
+         }
+      }
+      img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      }
    }
    section {
       width: 100%;
@@ -336,6 +376,18 @@ main {
    100% {
       transform: scale(1.5);
       opacity: 0.5;
+   }
+}
+
+@keyframes degradacion {
+   0% {
+      fill: rgba(184, 21, 21, 0.15);
+   }
+   50% {
+      fill: rgba(184, 21, 21, 1);
+   }
+   100% {
+      fill: rgba(184, 21, 21, 0.15);
    }
 }
 

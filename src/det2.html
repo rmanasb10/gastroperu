@@ -42,14 +42,17 @@
          <figure class="imagenPrincipal">
             <picture>
                <source media="(max-width: 460px)"
-                  srcset="img/lomo_saltado.png?width=300&height=300&fit=cover&format=webp"
+                  srcset="img/lomo_saltado.png?as=avif&width=300&height=300&fit=cover" type="image/avif">
+               <source media="(max-width: 460px)"
+                  srcset="img/lomo_saltado.png?as=webp&width=300&height=300&fit=cover" type="image/webp"
                   type="image/webp">
                <source media="(max-width: 1024px)"
-                  srcset="img/lomo_saltado.png?width=600&height=600&fit=cover&format=webp"
-                  type="image/webp">
-               <source srcset="img/lomo_saltado.png?width=1200&height=1200&fit=cover&format=avif"
-                  type="image/avif">
-               <img src="img/lomo_saltado.png" alt="Imagen de lomo saltado" width="450" height="315">
+                  srcset="img/lomo_saltado.png?as=avif&width=1024&height=576&fit=cover" type="image/avif">
+               <source media="(max-width: 1024px)"
+                  srcset="img/lomo_saltado.png?as=webp&width=1024&height=576&fit=cover" type="image/webp">
+               <source srcset="img/lomo_saltado.png?as=avif&width=1920&height=1080&fit=cover" type="image/avif">
+               <source srcset="img/lomo_saltado.png?as=webp&width=1920&height=1080&fit=cover" type="image/webp">
+               <img src="img/lomo_saltado.png" alt="Imagen de lomo saltado" width="1024" height="576" loading="lazy">
             </picture>
             <figcaption>Imagen de <a href="https://unsplash.com/es/@rayvenshots">Reyven Shots</a> en <a href="https://unsplash.com/">Unsplash</a></figcaption>
          </figure>
