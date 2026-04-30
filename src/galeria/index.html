@@ -10,7 +10,6 @@
       <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="../css/main.scss">
       <link rel="icon" href="../img/favicon.ico">
-      <script type="module" src="../script/script.js"></script>
    </head>
    <body class="container">
       <include src="componentes/header.html"></include>
@@ -45,7 +44,7 @@
                   <figcaption>Resolución a 1x</figcaption>
                   <picture>
                      <source type="image/webp"
-                     srcset="../img/lomo_saltado.png?as=webp&width=460&quality=60 1x">
+                     srcset="../img/lomo_saltado.png?as=webp&width=460&quality=75 1x">
                      <img src="../img/lomo_saltado.png" alt="Imagen de lomo saltado optimizada a 1x">
                   </picture>
                </figure>
@@ -53,7 +52,7 @@
                   <figcaption>Resolución a 1.5x</figcaption>
                   <picture>
                      <source type="image/webp"
-                     srcset="../img/lomo_saltado.png?as=webp&width=460&quality=70 1.5x">
+                     srcset="../img/lomo_saltado.png?as=webp&width=690&quality=75 1.5x">
                      <img src="../img/lomo_saltado.png" alt="Imagen de lomo saltado optimizada a 1.5x">
                   </picture>
                </figure>
@@ -61,11 +60,28 @@
                   <figcaption>Resolución a 2x</figcaption>
                   <picture>
                      <source type="image/webp"
-                     srcset="../img/lomo_saltado.png?as=webp&width=460&quality=80 2x">
+                     srcset="../img/lomo_saltado.png?as=webp&width=920&quality=75 2x">
                      <img src="../img/lomo_saltado.png" alt="Imagen de lomo saltado optimizada a 2x">
                   </picture>
                </figure>
             </div>
+         </div>
+         <div class="galeria">
+         <p>Art Direction - Diferente recorte según dispositivo</p>
+         <div>
+            <figure>
+               <figcaption>Móvil: recorte cuadrado centrado</figcaption>
+               <img src="../img/GastroPeru.png?as=webp&width=300&height=300&fit=cover">
+            </figure>
+            <figure>
+               <figcaption>Tablet: recorte horizontal</figcaption>
+               <img src="../img/GastroPeru.png?as=webp&width=1024&height=576&fit=cover">
+            </figure>
+            <figure>
+               <figcaption>Escritorio: imagen completa</figcaption>
+               <img src="../img/GastroPeru.png?as=webp&width=1920&height=1080&fit=cover">
+            </figure>
+         </div>
          </div>
       </main>
       <include src="componentes/footer.html"></include>

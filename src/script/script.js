@@ -72,9 +72,9 @@ function carruselImagenes(id, imagenes, opciones={}) {
                ${imagenes.map(imagen => `
                   <li class="splide__slide">
                      <img
-                     srcset="${imagen.srcset}
+                     srcset="${imagen.srcset}"
                      sizes="(min-width: 1200px) 1920px, (min-width: 1024px) 1024px, 460px"
-                     src="${imagen.url}" alt="${imagen.alt}" style="width:100%; display:block;">
+                     src="${imagen.src}" alt="${imagen.alt}" style="width:100%; display:block;">
                   </li>`
                ).join('')}
             </ul>
@@ -99,11 +99,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
    })
    const fechaActual = document.getElementById("fechaActual");
-   const hoy = Date.now();
-   const formatoFecha = format(hoy, "d 'de' MMMM 'de' yyyy", {
-      locale: es
-   })
-   fechaActual.innerText = `Receta actualizada a ${formatoFecha}`;
+   if(fechaActual) {
+      const hoy = Date.now();
+      const formatoFecha = format(hoy, "d 'de' MMMM 'de' yyyy", {
+         locale: es
+      })
+      fechaActual.innerText = `Receta actualizada a ${formatoFecha}`;
+   }
    if (document.getElementById("carruselCeviche")) {
       carruselImagenes("carruselCeviche", imagenesCeviche, {
          interval: 5000,
