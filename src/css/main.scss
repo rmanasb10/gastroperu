@@ -223,7 +223,6 @@ main {
    }
    .imagenPrincipal {
       background-color: variables.$colorBody;
-      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -233,8 +232,6 @@ main {
       img {
          border: 1px solid variables.$colorSecundario;
          border-radius: 50%;
-         width: 150px; 
-         height: 150px;
          object-fit: cover;
       }
       figcaption {
@@ -518,8 +515,8 @@ main {
       padding-right: 300px;
       .imagenPrincipal {
          img {
-            width: 1050px; 
-            height: 1050px;
+            width: 500px; 
+            height: 500px;
          }
       }
       iframe {
