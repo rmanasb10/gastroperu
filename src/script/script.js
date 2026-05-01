@@ -3,29 +3,29 @@ import '@splidejs/splide/dist/css/splide.min.css'
 import {format} from 'date-fns';
 import {es} from 'date-fns/locale';
 
-import imagenIngredientesCeviche460 from 'url:../img/ingredientes_ceviche.png?as=webp&width=460&quality=80'
-import imagenIngredientesCeviche1024 from 'url:../img/ingredientes_ceviche.png?as=webp&width=1024&quality=80'
-import imagenIngredientesCeviche1920 from 'url:../img/ingredientes_ceviche.png?as=webp&width=1920&quality=75'
+import imagenIngredientesCeviche460 from 'url:../img/ingredientes_ceviche.png?as=webp&quality=80'
+import imagenIngredientesCeviche1024 from 'url:../img/ingredientes_ceviche.png?as=webp&quality=80'
+import imagenIngredientesCeviche1920 from 'url:../img/ingredientes_ceviche.png?as=webp&quality=75'
 
-import imagenPescadoCrudo460 from 'url:../img/pescado_crudo.png?as=webp&width=460&quality=80'
-import imagenPescadoCrudo1024 from 'url:../img/pescado_crudo.png?as=webp&width=1024&quality=80'
-import imagenPescadoCrudo1920 from 'url:../img/pescado_crudo.png?as=webp&width=1920&quality=75'
+import imagenPescadoCrudo460 from 'url:../img/pescado_crudo.png?as=webp&quality=80'
+import imagenPescadoCrudo1024 from 'url:../img/pescado_crudo.png?as=webp&quality=80'
+import imagenPescadoCrudo1920 from 'url:../img/pescado_crudo.png?as=webp&quality=75'
 
-import imagenCevicheChoclo460 from 'url:../img/ceviche_choclo.png?as=webp&width=460&quality=80'
-import imagenCevicheChoclo1024 from 'url:../img/ceviche_choclo.png?as=webp&width=1024&quality=80'
-import imagenCevicheChoclo1920 from 'url:../img/ceviche_choclo.png?as=webp&width=1920&quality=75'
+import imagenCevicheChoclo460 from 'url:../img/ceviche_choclo.png?as=webp&quality=80'
+import imagenCevicheChoclo1024 from 'url:../img/ceviche_choclo.png?as=webp&quality=80'
+import imagenCevicheChoclo1920 from 'url:../img/ceviche_choclo.png?as=webp&quality=75'
 
-import imagenCorteCarnes460 from 'url:../img/corte_carnes.png?as=webp&width=460&quality=80'
-import imagenCorteCarnes1024 from 'url:../img/corte_carnes.png?as=webp&width=1024&quality=80'
-import imagenCorteCarnes1920 from 'url:../img/corte_carnes.png?as=webp&width=1920&quality=75'
+import imagenCorteCarnes460 from 'url:../img/corte_carnes.png?as=webp&quality=80'
+import imagenCorteCarnes1024 from 'url:../img/corte_carnes.png?as=webp&quality=80'
+import imagenCorteCarnes1920 from 'url:../img/corte_carnes.png?as=webp&quality=75'
 
-import imagenAjis460 from 'url:../img/ajis.png?as=webp&width=460&quality=80'
-import imagenAjis1024 from 'url:../img/ajis.png?as=webp&width=1024&quality=80'
-import imagenAjis1920 from 'url:../img/ajis.png?as=webp&width=1920&quality=75'
+import imagenAjis460 from 'url:../img/ajis.png?as=webp&quality=80'
+import imagenAjis1024 from 'url:../img/ajis.png?as=webp&quality=80'
+import imagenAjis1920 from 'url:../img/ajis.png?as=webp&quality=75'
 
-import imagenArrozBlanco460 from 'url:../img/arroz_blanco.png?as=webp&width=460&quality=80'
-import imagenArrozBlanco1024 from 'url:../img/arroz_blanco.png?as=webp&width=1024&quality=80'
-import imagenArrozBlanco1920 from 'url:../img/arroz_blanco.png?as=webp&width=1920&quality=75'
+import imagenArrozBlanco460 from 'url:../img/arroz_blanco.png?as=webp&quality=80'
+import imagenArrozBlanco1024 from 'url:../img/arroz_blanco.png?as=webp&quality=80'
+import imagenArrozBlanco1920 from 'url:../img/arroz_blanco.png?as=webp&quality=75'
 
 const imagenesCeviche = [
    {
@@ -73,7 +73,7 @@ function carruselImagenes(id, imagenes, opciones={}) {
                   <li class="splide__slide">
                      <img
                      srcset="${imagen.srcset}"
-                     sizes="(min-width: 1200px) 1920px, (min-width: 1024px) 1024px, 460px"
+                     sizes="(min-width: 1025px) 1920px, (min-width: 460px) 1024px, 460px"
                      src="${imagen.src}" alt="${imagen.alt}" style="width:100%; display:block;">
                   </li>`
                ).join('')}
