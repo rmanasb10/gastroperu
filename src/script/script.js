@@ -63,7 +63,7 @@ const imagenesLomoSaltado = [
    }
 ]
 
-function carruselImagenes(id, imagenes, opciones={}) {
+async function carruselImagenes(id, imagenes, opciones={}) {
    const contenedor = document.getElementById(id);
    contenedor.innerHTML = `
       <section class="splide">
@@ -74,7 +74,7 @@ function carruselImagenes(id, imagenes, opciones={}) {
                      <img
                      srcset="${imagen.srcset}"
                      sizes="(min-width: 1025px) 1920px, (min-width: 460px) 1024px, 460px"
-                     src="${imagen.src}" alt="${imagen.alt}" style="width:100%; display:block;">
+                     src="${imagen.src}" alt="${imagen.alt}" style="width:100%; display:block;" loading="lazy">
                   </li>`
                ).join('')}
             </ul>
@@ -107,13 +107,13 @@ document.addEventListener("DOMContentLoaded", () => {
       fechaActual.innerText = `Receta actualizada a ${formatoFecha}`;
    }
    if (document.getElementById("carruselCeviche")) {
-      carruselImagenes("carruselCeviche", imagenesCeviche, {
+      await carruselImagenes("carruselCeviche", imagenesCeviche, {
          interval: 5000,
          arrows: true
       });
    }
    if (document.getElementById("carruselLomoSaltado")) {
-      carruselImagenes("carruselLomoSaltado", imagenesLomoSaltado, {
+      await carruselImagenes("carruselLomoSaltado", imagenesLomoSaltado, {
          interval: 5000,
          arrows: true
       });
