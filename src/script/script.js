@@ -63,7 +63,7 @@ const imagenesLomoSaltado = [
    }
 ]
 
-function carruselImagenes(id, imagenes, opciones={}) {
+async function carruselImagenes(id, imagenes, opciones={}) {
    const contenedor = document.getElementById(id);
    contenedor.innerHTML = `
       <section class="splide">
@@ -74,7 +74,7 @@ function carruselImagenes(id, imagenes, opciones={}) {
                      <img
                      srcset="${imagen.srcset}"
                      sizes="(min-width: 1025px) 1920px, (min-width: 460px) 1024px, 460px"
-                     src="${imagen.src}" alt="${imagen.alt}" style="width:100%; display:block;">
+                     src="${imagen.src}" alt="${imagen.alt}" style="width:100%; display:block;" loading="lazy">
                   </li>`
                ).join('')}
             </ul>
