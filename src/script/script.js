@@ -107,13 +107,13 @@ document.addEventListener("DOMContentLoaded", () => {
       fechaActual.innerText = `Receta actualizada a ${formatoFecha}`;
    }
    if (document.getElementById("carruselCeviche")) {
-      await carruselImagenes("carruselCeviche", imagenesCeviche, {
+      carruselImagenes("carruselCeviche", imagenesCeviche, {
          interval: 5000,
          arrows: true
       });
    }
    if (document.getElementById("carruselLomoSaltado")) {
-      await carruselImagenes("carruselLomoSaltado", imagenesLomoSaltado, {
+      carruselImagenes("carruselLomoSaltado", imagenesLomoSaltado, {
          interval: 5000,
          arrows: true
       });
