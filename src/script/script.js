@@ -66,7 +66,7 @@ const imagenesLomoSaltado = [
 async function carruselImagenes(id, imagenes, opciones={}) {
    const contenedor = document.getElementById(id);
    contenedor.innerHTML = `
-      <section class="splide">
+      <section class="splide" id="splide-${id}">
          <div class="splide__track">
             <ul class="splide__list">
                ${imagenes.map(imagen => `
@@ -80,7 +80,11 @@ async function carruselImagenes(id, imagenes, opciones={}) {
             </ul>
          </div>
       </section>`
-   const splide = new Splide(contenedor.querySelector('.splide'), {
+   const elementoSplide = document.getElementById(`splide-${id}`);
+   if (!elementoSplide) {
+      return;
+   }
+   const splide = new Splide(elementoSplide, {
       type: 'loop',
       perPage: 1,
       autoplay: true,
