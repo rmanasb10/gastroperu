@@ -1,14 +1,21 @@
 <header>
    <a href="~/src/index.html">
-      <img srcset="~/src/img/GastroPeru.png?as=webp&quality=75 1x, ~/src/img/GastroPeru.png?as=webp&quality=75 1.5x, ~/src/img/GastroPeru.png?as=webp&quality=75 2x loading=lazy"
-      src="~/src/img/GastroPeru.png" alt="Logotipo de GastroPerú" width="400" height="200">
+      <img
+         srcset="~/src/img/GastroPeru.png?as=webp&quality=75 1x,
+                 ~/src/img/GastroPeru.png?as=webp&quality=75&width=600 1.5x,
+                 ~/src/img/GastroPeru.png?as=webp&quality=75&width=800 2x"
+         src="~/src/img/GastroPeru.png?as=webp&quality=75"
+         alt="Logotipo de GastroPerú"
+         width="400"
+         height="200"
+         fetchpriority="high">
    </a>
    <nav>
       <ul>
          <li class="nav-item"><a href="#">BLOG</a></li>
          <li class="nav-item"><a href="~/src/categorias/index.html">CATEGORÍAS</a></li>
          <li class="nav-item"><a href="#">CURSOS</a></li>
-         <li class="nav-item"><a href="~/src/galeria/index.html">GALERÍA</li>
+         <li class="nav-item"><a href="~/src/galeria/index.html">GALERÍA</a></li>
       </ul>
    </nav>
 </header>

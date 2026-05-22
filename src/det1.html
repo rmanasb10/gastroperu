@@ -6,8 +6,9 @@
       <meta name="description" content="Descubre la receta de ceviche seleccionada por el equipo de Gastro Perú">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
       <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+      <link rel="preload" href="css/main.scss" as="style">
       <link rel="stylesheet" href="css/main.scss">
       <link rel="icon" href="img/favicon.ico">
       <script type="module" src="script/script.js"></script>
@@ -40,16 +41,35 @@
          </section>
          <figure class="imagenPrincipal">
             <picture>
-               <source media="(min-width: 1025px)"
-                  srcset="img/ceviche.png?as=avif&width=500&height=500&fit=cover" type="image/avif">
-               <source media="(min-width: 1025px)" srcset="img/ceviche.png?as=webp&width=500&height=500&fit=cover" type="image/webp">
-               <source media="(min-width: 460px)"
-                  srcset="img/ceviche.png?as=avif&width=450&height=450&fit=contain" type="image/avif">
-               <source media="(min-width: 460px)"
-                  srcset="img/ceviche.png?as=webp&width=450&height=450&fit=contain" type="image/webp">
-               <source srcset="img/ceviche.png?as=avif&width=300&height=300&fit=cover" type="image/avif">
-               <source srcset="img/ceviche.png?as=webp&width=300&height=300&fit=cover" type="image/webp">
-               <img src="img/ceviche.png" alt="Imagen de ceviche" width="300" height="300" loading="lazy">
+               <source
+                  media="(min-width: 1025px)"
+                  srcset="img/ceviche.png?as=avif&width=500&height=500&fit=cover&quality=80"
+                  type="image/avif">
+               <source
+                  media="(min-width: 1025px)"
+                  srcset="img/ceviche.png?as=webp&width=500&height=500&fit=cover&quality=80"
+                  type="image/webp">
+               <source
+                  media="(min-width: 460px)"
+                  srcset="img/ceviche.png?as=avif&width=450&height=450&fit=cover&quality=80"
+                  type="image/avif">
+               <source
+                  media="(min-width: 460px)"
+                  srcset="img/ceviche.png?as=webp&width=450&height=450&fit=cover&quality=80"
+                  type="image/webp">
+               <source
+                  srcset="img/ceviche.png?as=avif&width=300&height=300&fit=cover&quality=80"
+                  type="image/avif">
+               <source
+                  srcset="img/ceviche.png?as=webp&width=300&height=300&fit=cover&quality=80"
+                  type="image/webp">
+               <img
+                  src="img/ceviche.png"
+                  alt="Imagen de lomo saltado"
+                  width="300"
+                  height="300"
+                  loading="lazy"
+                  decoding="async">
             </picture>
             <figcaption>Imagen de <a href="https://unsplash.com/es/@weekendtripcreator">Lisa Riabinina</a> en <a href="https://unsplash.com/">Unsplash</a></figcaption>
          </figure>

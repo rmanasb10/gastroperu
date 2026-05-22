@@ -6,8 +6,9 @@
       <meta name="description" content="Espacio de Gastro Perú dedicado a una galería de las mejoras recetas seleccionadas por el equipo de Gastro Perú">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
       <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+      <link rel="preload" href="../css/main.scss" as="style">
       <link rel="stylesheet" href="../css/main.scss">
       <link rel="icon" href="../img/favicon.ico">
       <script async type="module" src="../script/script.js"></script>
@@ -22,20 +23,66 @@
             <div>
                <figure>
                   <figcaption>Imagen original PNG</figcaption>
-                  <img src="../img/ceviche.png" alt="Imagen de un plato de ceviche en formato png" loading="lazy">
+                  <img
+                     src="../img/ceviche.png"
+                     alt="Imagen de un plato de ceviche en formato png"
+                     width="1920" height="1080"
+                     loading="eager"
+                     decoding="async"
+                  >
                </figure>
                <figure>
                   <figcaption>Imagen webp para móvil (460px)</figcaption>
-                  <img src="../img/ceviche.png?as=webp&width=460&quality=60" alt="Imagen de un plato de ceviche optimizada para móvil" loading="lazy">
+                  <picture>
+                     <source
+                        type="image/webp"
+                        srcset="../img/ceviche.png?as=webp&width=460&quality=60"
+                        sizes="(max-width: 480px) 100vw, 460px"
+                     >
+                     <img
+                        src="../img/ceviche.png"
+                        alt="Imagen de un plato de ceviche optimizada para móvil"
+                        width="460" height="259"
+                        loading="lazy"
+                        decoding="async"
+                     >
+                  </picture>
                </figure>
                <figure>
                   <figcaption>Imagen webp para tablet (1024px)</figcaption>
-                  <img src="../img/ceviche.png?as=webp&width=1024&quality=70" alt="Imagen de un plato de ceviche optimizada para tablet" loading="lazy">
+                  <picture>
+                     <source
+                        type="image/webp"
+                        srcset="../img/ceviche.png?as=webp&width=1024&quality=70"
+                        sizes="(max-width: 1024px) 100vw, 1024px"
+                     >
+                     <img
+                        src="../img/ceviche.png"
+                        alt="Imagen de un plato de ceviche optimizada para tablet"
+                        width="1024" height="576"
+                        loading="lazy"
+                        decoding="async"
+                     >
+                  </picture>
                </figure>
                <figure>
                   <figcaption>Imagen webp para escritorio (1920px)</figcaption>
-                  <img src="../img/ceviche.png?as=webp&width=1920&quality=80" alt="Imagen de un plato de ceviche optimizada para escritorio" loading="lazy">
+                  <picture>
+                     <source
+                        type="image/webp"
+                        srcset="../img/ceviche.png?as=webp&width=1920&quality=80"
+                        sizes="100vw"
+                     >
+                     <img
+                        src="../img/ceviche.png"
+                        alt="Imagen de un plato de ceviche optimizada para escritorio"
+                        width="1920" height="1080"
+                        loading="lazy"
+                        decoding="async"
+                     >
+                  </picture>
                </figure>
+
             </div>
          </div>
          <div class="galeria">
@@ -44,45 +91,114 @@
                <figure>
                   <figcaption>Resolución a 1x</figcaption>
                   <picture>
-                     <source type="image/webp"
-                     srcset="../img/lomo_saltado.png?as=webp&quality=75 1x">
-                     <img src="../img/lomo_saltado.png" alt="Imagen de lomo saltado optimizada a 1x" loading="lazy">
+                     <source
+                        type="image/webp"
+                        srcset="../img/lomo_saltado.png?as=webp&width=600&quality=75 1x,
+                                ../img/lomo_saltado.png?as=webp&width=1200&quality=75 2x,
+                                ../img/lomo_saltado.png?as=webp&width=1800&quality=75 3x"
+                     >
+                     <img
+                        src="../img/lomo_saltado.png"
+                        alt="Imagen de lomo saltado optimizada a 1x"
+                        width="600" height="400"
+                        loading="lazy"
+                        decoding="async"
+                     >
                   </picture>
                </figure>
                <figure>
                   <figcaption>Resolución a 1.5x</figcaption>
                   <picture>
-                     <source type="image/webp"
-                     srcset="../img/lomo_saltado.png?as=webp&quality=75 1.5x">
-                     <img src="../img/lomo_saltado.png" alt="Imagen de lomo saltado optimizada a 1.5x" loading="lazy">
+                     <source
+                        type="image/webp"
+                        srcset="../img/lomo_saltado.png?as=webp&quality=75 1.5x"
+                     >
+                     <img
+                        src="../img/lomo_saltado.png"
+                        alt="Imagen de lomo saltado optimizada a 1.5x"
+                        width="600" height="400"
+                        loading="lazy"
+                        decoding="async"
+                     >
                   </picture>
                </figure>
                <figure>
                   <figcaption>Resolución a 2x</figcaption>
                   <picture>
-                     <source type="image/webp"
-                     srcset="../img/lomo_saltado.png?as=webp&quality=75 2x">
-                     <img src="../img/lomo_saltado.png" alt="Imagen de lomo saltado optimizada a 2x" loading="lazy">
+                     <source
+                        type="image/webp"
+                        srcset="../img/lomo_saltado.png?as=webp&quality=75 2x"
+                     >
+                     <img
+                        src="../img/lomo_saltado.png"
+                        alt="Imagen de lomo saltado optimizada a 2x"
+                        width="600" height="400"
+                        loading="lazy"
+                        decoding="async"
+                     >
                   </picture>
                </figure>
+
             </div>
          </div>
          <div class="galeria">
-         <p>Art Direction - Diferente recorte según dispositivo</p>
-         <div>
-            <figure>
-               <figcaption>Móvil: recorte cuadrado centrado</figcaption>
-               <img src="../img/GastroPeru.png?as=webp&width=300&height=300&fit=cover" loading="lazy">
-            </figure>
-            <figure>
-               <figcaption>Tablet: recorte horizontal</figcaption>
-               <img src="../img/GastroPeru.png?as=webp&width=1024&height=576&fit=cover" loading="lazy">
-            </figure>
-            <figure>
-               <figcaption>Escritorio: imagen completa</figcaption>
-               <img src="../img/GastroPeru.png?as=webp&width=1920&height=1080&fit=cover" loading="lazy">
-            </figure>
-         </div>
+            <p>Art Direction - Diferente recorte según dispositivo</p>
+            <div>
+               <figure>
+                  <figcaption>Móvil: recorte cuadrado centrado</figcaption>
+                  <picture>
+                     <source
+                        media="(max-width: 599px)"
+                        type="image/webp"
+                        srcset="../img/GastroPeru.png?as=webp&width=300&height=300&fit=cover 1x,
+                                ../img/GastroPeru.png?as=webp&width=600&height=600&fit=cover 2x"
+                     >
+                     <img
+                        src="../img/GastroPeru.png"
+                        alt="Imagen de Gastro Perú con recorte cuadrado para móvil"
+                        width="300" height="300"
+                        loading="lazy"
+                        decoding="async"
+                     >
+                  </picture>
+               </figure>
+               <figure>
+                  <figcaption>Tablet: recorte horizontal</figcaption>
+                  <picture>
+                     <source
+                        media="(min-width: 600px) and (max-width: 1023px)"
+                        type="image/webp"
+                        srcset="../img/GastroPeru.png?as=webp&width=1024&height=576&fit=cover 1x,
+                                ../img/GastroPeru.png?as=webp&width=2048&height=1152&fit=cover 2x"
+                     >
+                     <img
+                        src="../img/GastroPeru.png"
+                        alt="Imagen de Gastro Perú con recorte horizontal para tablet"
+                        width="1024" height="576"
+                        loading="lazy"
+                        decoding="async"
+                     >
+                  </picture>
+               </figure>
+               <figure>
+                  <figcaption>Escritorio: imagen completa</figcaption>
+                  <picture>
+                     <source
+                        media="(min-width: 1024px)"
+                        type="image/webp"
+                        srcset="../img/GastroPeru.png?as=webp&width=1920&height=1080&fit=cover 1x,
+                                ../img/GastroPeru.png?as=webp&width=3840&height=2160&fit=cover 2x"
+                     >
+                     <img
+                        src="../img/GastroPeru.png"
+                        alt="Imagen de Gastro Perú completa para escritorio"
+                        width="1920" height="1080"
+                        loading="lazy"
+                        decoding="async"
+                     >
+                  </picture>
+               </figure>
+            </div>
          </div>
       </main>
       <include src="componentes/footer.html"></include>
