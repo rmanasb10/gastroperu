@@ -7,11 +7,19 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-      <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+      <link rel="preload" as="style"
+         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+         onload="this.onload=null;this.rel='stylesheet'">
+      <noscript>
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap">
+      </noscript>
+      <link rel="preconnect" href="https://www.youtube.com">
+      <link rel="preconnect" href="https://i.ytimg.com">
       <link rel="preload" href="css/main.scss" as="style">
-      <link rel="stylesheet" href="css/main.scss">
+      <link rel="stylesheet" href="css/main.scss" media="print" onload="this.media='all'">
+      <noscript><link rel="stylesheet" href="css/main.scss"></noscript>
       <link rel="icon" href="img/favicon.ico">
-      <script type="module" src="script/script.js"></script>
+      <script type="module" src="script/script.js" defer></script>
    </head>
    <body class="container">
       <include src="componentes/header.html"></include>
@@ -65,11 +73,11 @@
                   type="image/webp">
                <img
                   src="img/ceviche.jpg"
-                  alt="Imagen de lomo saltado"
+                  alt="Imagen de un plato de ceviche"
                   width="300"
                   height="300"
-                  loading="lazy"
-                  decoding="async">
+                  loading="eager"
+                  decoding="sync">
             </picture>
             <figcaption>Imagen de <a href="https://unsplash.com/es/@weekendtripcreator">Lisa Riabinina</a> en <a href="https://unsplash.com/">Unsplash</a></figcaption>
          </figure>
@@ -80,7 +88,7 @@
                <p>Remojar la cebolla en agua con sal 10 minutos antes de añadirla, suavizará su sabor y le dará un toque crujiente</p>
                <p>Acompañar este plato con camote cocido o choclo, es ideal</p>
          </section>
-         <iframe width="560" height="315" src="https://www.youtube.com/embed/oRw2YNE5kLU?si=O_vXhwqOnuiay5l1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/oRw2YNE5kLU?si=O_vXhwqOnuiay5l1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </main>
       <include src="componentes/footer.html"></include>
    </body>

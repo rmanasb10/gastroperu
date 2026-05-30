@@ -57,7 +57,7 @@ header {
    }
 }
 
-@media screen and (min-width: 460px) and (max-width: 1024px) {
+@media screen and (min-width: variables.$tablet) and (max-width: 1024px) {
    header {
       padding-left: 50px;
       padding-right: 50px;
@@ -73,7 +73,7 @@ header {
    }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: variables.$escritorio) {
    header {
       padding-left: 300px;
       padding-right: 300px;

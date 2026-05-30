@@ -7,11 +7,17 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-      <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+      <link rel="preload" as="style"
+         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+         onload="this.onload=null;this.rel='stylesheet'">
+      <noscript>
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap">
+      </noscript>
       <link rel="preload" href="../css/main.scss" as="style">
-      <link rel="stylesheet" href="../css/main.scss">
+      <link rel="stylesheet" href="../css/main.scss" media="print" onload="this.media='all'">
+      <noscript><link rel="stylesheet" href="../css/main.scss"></noscript>
       <link rel="icon" href="../img/favicon.ico">
-      <script async type="module" src="../script/script.js"></script>
+      <script type="module" src="../script/script.js" defer></script>
    </head>
    <body class="container">
       <include src="componentes/header.html"></include>
@@ -28,6 +34,7 @@
                      alt="Imagen de un plato de ceviche en formato png"
                      width="1920" height="1080"
                      loading="eager"
+                     fetchpriority="high"
                      decoding="async"
                   >
                </figure>
@@ -93,9 +100,7 @@
                   <picture>
                      <source
                         type="image/webp"
-                        srcset="../img/lomo_saltado.jpg?as=webp&width=600&quality=75 1x,
-                                ../img/lomo_saltado.jpg?as=webp&width=1200&quality=75 2x,
-                                ../img/lomo_saltado.jpg?as=webp&width=1800&quality=75 3x"
+                        srcset="../img/lomo_saltado.jpg?as=webp&width=600&quality=75 1x"
                      >
                      <img
                         src="../img/lomo_saltado.jpg"
@@ -111,7 +116,7 @@
                   <picture>
                      <source
                         type="image/webp"
-                        srcset="../img/lomo_saltado.jpg?as=webp&quality=75 1.5x"
+                        srcset="../img/lomo_saltado.jpg?as=webp&width=1200&quality=75 1.5x"
                      >
                      <img
                         src="../img/lomo_saltado.jpg"
@@ -127,7 +132,7 @@
                   <picture>
                      <source
                         type="image/webp"
-                        srcset="../img/lomo_saltado.jpg?as=webp&quality=75 2x"
+                        srcset="../img/lomo_saltado.jpg?as=webp&width=1800&quality=75 2x"
                      >
                      <img
                         src="../img/lomo_saltado.jpg"
@@ -153,6 +158,7 @@
                         srcset="../img/GastroPeru.jpg?as=webp&width=300&height=300&fit=cover 1x,
                                 ../img/GastroPeru.jpg?as=webp&width=600&height=600&fit=cover 2x"
                      >
+                     <source type="image/webp" srcset="../img/GastroPeru.jpg?as=webp&width=1920&quality=80">
                      <img
                         src="../img/GastroPeru.jpg"
                         alt="Imagen de Gastro Perú con recorte cuadrado para móvil"
@@ -171,6 +177,7 @@
                         srcset="../img/GastroPeru.jpg?as=webp&width=1024&height=576&fit=cover 1x,
                                 ../img/GastroPeru.jpg?as=webp&width=2048&height=1152&fit=cover 2x"
                      >
+                     <source type="image/webp" srcset="../img/GastroPeru.jpg?as=webp&width=1920&quality=80">
                      <img
                         src="../img/GastroPeru.jpg"
                         alt="Imagen de Gastro Perú con recorte horizontal para tablet"
@@ -189,6 +196,7 @@
                         srcset="../img/GastroPeru.jpg?as=webp&width=1920&height=1080&fit=cover 1x,
                                 ../img/GastroPeru.jpg?as=webp&width=3840&height=2160&fit=cover 2x"
                      >
+                     <source type="image/webp" srcset="../img/GastroPeru.jpg?as=webp&width=1920&quality=80">
                      <img
                         src="../img/GastroPeru.jpg"
                         alt="Imagen de Gastro Perú completa para escritorio"

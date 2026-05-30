@@ -1,14 +1,16 @@
 <header>
    <a href="~/src/index.html">
       <img
-         srcset="~/src/img/GastroPeru.jpg?as=webp&quality=75 1x,
-                 ~/src/img/GastroPeru.jpg?as=webp&quality=75&width=600 1.5x,
-                 ~/src/img/GastroPeru.jpg?as=webp&quality=75&width=800 2x"
-         src="~/src/img/GastroPeru.jpg?as=webp&quality=75"
+         srcset="~/src/img/GastroPeru.jpg?as=webp&width=400&quality=75 1x,
+                 ~/src/img/GastroPeru.jpg?as=webp&width=600&quality=75 1.5x,
+                 ~/src/img/GastroPeru.jpg?as=webp&width=800&quality=75 2x"
+         src="~/src/img/GastroPeru.jpg"
          alt="Logotipo de GastroPerú"
          width="400"
          height="200"
-         fetchpriority="high">
+         loading="eager"
+         fetchpriority="high"
+         decoding="async">
    </a>
    <nav>
       <ul>
