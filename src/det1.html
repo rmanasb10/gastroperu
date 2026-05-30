@@ -5,6 +5,18 @@
    <title>Gastro Perú Receta Ceviche</title>
    <meta name="description" content="Descubre la receta de ceviche seleccionada por el equipo de Gastro Perú">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preload" href="css/main.scss" as="style" onload="this.onload=null;this.rel='stylesheet'">
+   <noscript><link rel="stylesheet" href="css/main.scss"></noscript>
+   <link rel="modulepreload" href="script/carruselCeviche.js">
+   <link rel="modulepreload" href="script/script.js">
+   <script type="module" src="script/script.js"></script>
+   <link rel="preload" as="image"
+      href="img/pescado_crudo.jpg?as=webp&width=460&quality=80"
+      imagesrcset="img/pescado_crudo.jpg?as=webp&width=460&quality=80 460w,
+                  img/pescado_crudo.jpg?as=webp&width=700&quality=80 700w,
+                  img/pescado_crudo.jpg?as=webp&width=800&quality=75 800w"
+      imagesizes="(min-width: 1025px) 800px, (min-width: 460px) 700px, 460px"
+      fetchpriority="high">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
    <link rel="stylesheet"
@@ -13,17 +25,7 @@
    <noscript>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap">
    </noscript>
-   <link rel="stylesheet" href="css/main.scss">
    <link rel="icon" href="img/favicon.ico">
-   <link rel="preload" as="image"
-      href="img/pescado_crudo.jpg?as=webp&width=460&quality=80"
-      imagesrcset="img/pescado_crudo.jpg?as=webp&width=460&quality=80 460w,
-                  img/pescado_crudo.jpg?as=webp&width=700&quality=80 700w,
-                  img/pescado_crudo.jpg?as=webp&width=800&quality=75 800w"
-      imagesizes="(min-width: 1025px) 800px, (min-width: 460px) 700px, 460px"
-      fetchpriority="high">
-   <link rel="modulepreload" href="script/carruselCeviche.js">
-   <script type="module" src="script/script.js"></script>
 </head>
    <body class="container">
       <include src="componentes/header.html"></include>

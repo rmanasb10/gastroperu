@@ -17,13 +17,13 @@ export const imagenesCeviche = [
       srcset: `${imagenIngredientesCeviche460} 460w, ${imagenIngredientesCeviche700} 700w, ${imagenIngredientesCeviche800} 800w`,
       src: imagenIngredientesCeviche800,
       alt: "Imagen de los ingredientes de un ceviche",
-      isLCP: false
+      isLCP: true
    },
    {
       srcset: `${imagenPescadoCrudo460} 460w, ${imagenPescadoCrudo700} 700w, ${imagenPescadoCrudo800} 800w`,
       src: imagenPescadoCrudo800,
       alt: "Imagen de un pescado fresco crudo",
-      isLCP: true
+      isLCP: false
    },
    {
       srcset: `${imagenCevicheChoclo460} 460w, ${imagenCevicheChoclo700} 700w, ${imagenCevicheChoclo800} 800w`,
