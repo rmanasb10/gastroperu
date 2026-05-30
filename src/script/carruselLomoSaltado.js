@@ -1,61 +1,76 @@
 import {Splide} from '@splidejs/splide'
+
 import imagenCorteCarnes460 from 'url:../img/corte_carnes.jpg?as=webp&width=460&quality=80'
-import imagenCorteCarnes1024 from 'url:../img/corte_carnes.jpg?as=webp&width=1024&quality=80'
-import imagenCorteCarnes1920 from 'url:../img/corte_carnes.jpg?as=webp&width=1920&quality=75'
+import imagenCorteCarnes700 from 'url:../img/corte_carnes.jpg?as=webp&width=700&quality=80'
+import imagenCorteCarnes800 from 'url:../img/corte_carnes.jpg?as=webp&width=800&quality=75'
 
 import imagenAjis460 from 'url:../img/ajis.jpg?as=webp&width=460&quality=80'
-import imagenAjis1024 from 'url:../img/ajis.jpg?as=webp&width=1024&quality=80'
-import imagenAjis1920 from 'url:../img/ajis.jpg?as=webp&width=1920&quality=75'
+import imagenAjis700 from 'url:../img/ajis.jpg?as=webp&width=700&quality=80'
+import imagenAjis800 from 'url:../img/ajis.jpg?as=webp&width=800&quality=75'
 
 import imagenArrozBlanco460 from 'url:../img/arroz_blanco.jpg?as=webp&width=460&quality=80'
-import imagenArrozBlanco1024 from 'url:../img/arroz_blanco.jpg?as=webp&width=1024&quality=80'
-import imagenArrozBlanco1920 from 'url:../img/arroz_blanco.jpg?as=webp&width=1920&quality=75'
+import imagenArrozBlanco700 from 'url:../img/arroz_blanco.jpg?as=webp&width=700&quality=80'
+import imagenArrozBlanco800 from 'url:../img/arroz_blanco.jpg?as=webp&width=800&quality=75'
 
 export const imagenesLomoSaltado = [
    {
-      srcset: `${imagenCorteCarnes460} 460w, ${imagenCorteCarnes1024} 1024w, ${imagenCorteCarnes1920} 1920w`,
-      src: imagenCorteCarnes1920,
-      alt: "Imagen de diferentes cortes en una pieza de carne"
+      srcset: `${imagenCorteCarnes460} 460w, ${imagenCorteCarnes700} 700w, ${imagenCorteCarnes800} 800w`,
+      src: imagenCorteCarnes800,
+      alt: "Imagen de diferentes cortes en una pieza de carne",
+      isLCP: true
    },
    {
-      srcset: `${imagenAjis460} 460w, ${imagenAjis1024} 1024w, ${imagenAjis1920} 1920w`,
-      src: imagenAjis1920,
-      alt: "Imagen de varios ajís"
+      srcset: `${imagenAjis460} 460w, ${imagenAjis700} 700w, ${imagenAjis800} 800w`,
+      src: imagenAjis800,
+      alt: "Imagen de varios ajís",
+      isLCP: false
    },
    {
-      srcset: `${imagenArrozBlanco460} 460w, ${imagenArrozBlanco1024} 1024w, ${imagenArrozBlanco1920} 1920w`,
-      src: imagenArrozBlanco1920,
-      alt: "Imagen de arroz blanco cocido"
+      srcset: `${imagenArrozBlanco460} 460w, ${imagenArrozBlanco700} 700w, ${imagenArrozBlanco800} 800w`,
+      src: imagenArrozBlanco800,
+      alt: "Imagen de arroz blanco cocido",
+      isLCP: false
    }
 ];
 
-export async function carruselImagenes(id, imagenes, opciones={}) {
-   const contenedor = document.getElementById(id);
-   contenedor.innerHTML = `
-      <section class="splide" id="splide-${id}">
-         <div class="splide__track">
-            <ul class="splide__list">
-               ${imagenes.map(imagen => `
-                  <li class="splide__slide">
-                     <img
-                     srcset="${imagen.srcset}"
-                     sizes="(min-width: 1025px) 1920px, (min-width: 460px) 1024px, 460px"
-                     src="${imagen.src}" alt="${imagen.alt}" style="width:100%; display:block;" loading="lazy">
-                  </li>`
-               ).join('')}
-            </ul>
-         </div>
-      </section>`
-   const elementoSplide = document.getElementById(`splide-${id}`);
-   if (!elementoSplide) {
-      return;
-   }
-   const splide = new Splide(elementoSplide, {
-      type: 'loop',
-      perPage: 1,
-      autoplay: true,
-      ...opciones
+export function carruselImagenes(id, imagenes, opciones = {}) {
+   return new Promise((resolve) => {
+      const contenedor = document.getElementById(id);
+      contenedor.innerHTML = `
+         <section class="splide" id="splide-${id}">
+            <div class="splide__track">
+               <ul class="splide__list">
+                  ${imagenes.map(imagen => `
+                     <li class="splide__slide">
+                        <img
+                        srcset="${imagen.srcset}"
+                        sizes="(min-width: 1025px) 800px, (min-width: 460px) 700px, 460px"
+                        src="${imagen.src}"
+                        alt="${imagen.alt}"
+                        style="width:100%; display:block;"
+                        ${imagen.isLCP
+                           ? 'fetchpriority="high" loading="eager" decoding="sync"'
+                           : 'loading="lazy" decoding="async"'
+                        }>
+                     </li>`
+                  ).join('')}
+               </ul>
+            </div>
+         </section>`;
+      requestAnimationFrame(() => {
+         const elementoSplide = document.getElementById(`splide-${id}`);
+         if (!elementoSplide) {
+            resolve(null);
+            return;
+         }
+         const splide = new Splide(elementoSplide, {
+            type: 'loop',
+            perPage: 1,
+            autoplay: true,
+            ...opciones
+         });
+         splide.mount();
+         resolve(splide);
+      });
    });
-   splide.mount();
-   return splide;
-};
+}

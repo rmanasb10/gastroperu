@@ -1,5 +1,7 @@
 import {format} from 'date-fns';
 import {es} from 'date-fns/locale';
+import {carruselImagenes as carruselCeviche, imagenesCeviche} from './carruselCeviche.js';
+import {carruselImagenes as carruselLomoSaltado, imagenesLomoSaltado} from './carruselLomoSaltado.js';
 
 document.addEventListener("DOMContentLoaded", async() => {
    const rutaActual = window.location.pathname;
@@ -18,15 +20,13 @@ document.addEventListener("DOMContentLoaded", async() => {
       fechaActual.innerText = `Receta actualizada a ${formatoFecha}`;
    }
    if (document.getElementById("carruselCeviche")) {
-      const {carruselImagenes, imagenesCeviche} = await import('./carruselCeviche.js');
-      carruselImagenes("carruselCeviche", imagenesCeviche, {
+      carruselCeviche("carruselCeviche", imagenesCeviche, {
          interval: 5000,
          arrows: true
       });
    }
    if (document.getElementById("carruselLomoSaltado")) {
-      const {carruselImagenes, imagenesLomoSaltado} = await import('./carruselLomoSaltado.js');
-      carruselImagenes("carruselLomoSaltado", imagenesLomoSaltado, {
+      carruselLomoSaltado("carruselLomoSaltado", imagenesLomoSaltado, {
          interval: 5000,
          arrows: true
       });
