@@ -5,14 +5,17 @@
    <title>Gastro Perú Receta Ceviche</title>
    <meta name="description" content="Descubre la receta de ceviche seleccionada por el equipo de Gastro Perú">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="preload" href="css/main.scss" as="style" onload="this.onload=null;this.rel='stylesheet'">
-   <noscript><link rel="stylesheet" href="css/main.scss"></noscript>
-   <script type="module" src="script/carruselCeviche.js"></script>
+   <link rel="stylesheet" href="css/main.scss">
+   <script type="module" src="script/carruselCeviche.js" async></script>
+   <link rel="preload" as="image"
+      imagesrcset="img/GastroPeru.jpg?as=webp&width=400&quality=75 1x,
+                  img/GastroPeru.jpg?as=webp&width=600&quality=75 1.5x,
+                  img/GastroPeru.jpg?as=webp&width=800&quality=75 2x"
+      fetchpriority="high">
    <link rel="preload" as="image"
       href="img/ingredientes_ceviche.jpg?as=webp&width=460&quality=80"
       imagesrcset="img/ingredientes_ceviche.jpg?as=webp&width=460&quality=80 460w, img/ingredientes_ceviche.jpg?as=webp&width=700&quality=80 700w,img/ingredientes_ceviche.jpg?as=webp&width=800&quality=75 800w"
-      imagesizes="(min-width: 1025px) 800px, (min-width: 460px) 700px, 460px"
-      fetchpriority="high">
+      imagesizes="(min-width: 1025px) 800px, (min-width: 460px) 700px, 460px">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
    <link rel="stylesheet"
@@ -53,7 +56,7 @@
             <img
                srcset="img/ceviche.jpg?as=webp&width=200&quality=75 200w, img/ceviche.jpg?as=webp&width=460&quality=80 460w, img/ceviche.jpg?as=webp&width=700&quality=80 700w, img/ceviche.jpg?as=webp&width=800&quality=75 800w"
                sizes="(min-width: 1025px) 800px, (min-width: 768px) 700px, (min-width: 460px) 460px, 200px"
-               src="img/ceviche.jpg?width=460" alt="Imagen de un plato de ceviche" loading="eager" fetchpriority="high" decoding="sync">
+               src="img/ceviche.jpg?width=460" alt="Imagen de un plato de ceviche" loading="eager" decoding="sync">
             <picture>
             <figcaption>Imagen de <a href="https://unsplash.com/es/@weekendtripcreator">Lisa Riabinina</a> en <a href="https://unsplash.com/">Unsplash</a></figcaption>
          </figure>
