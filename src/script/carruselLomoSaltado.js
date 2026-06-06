@@ -1,4 +1,6 @@
 import {Splide} from '@splidejs/splide'
+import {format} from 'date-fns';
+import {es} from 'date-fns/locale';
 
 import imagenCorteCarnes460 from 'url:../img/corte_carnes.jpg?as=webp&width=460&quality=80'
 import imagenCorteCarnes700 from 'url:../img/corte_carnes.jpg?as=webp&width=700&quality=80'
@@ -12,7 +14,7 @@ import imagenArrozBlanco460 from 'url:../img/arroz_blanco.jpg?as=webp&width=460&
 import imagenArrozBlanco700 from 'url:../img/arroz_blanco.jpg?as=webp&width=700&quality=80'
 import imagenArrozBlanco800 from 'url:../img/arroz_blanco.jpg?as=webp&width=800&quality=75'
 
-export const imagenesLomoSaltado = [
+const imagenesLomoSaltado = [
    {
       srcset: `${imagenCorteCarnes460} 460w, ${imagenCorteCarnes700} 700w, ${imagenCorteCarnes800} 800w`,
       src: imagenCorteCarnes800,
@@ -33,7 +35,7 @@ export const imagenesLomoSaltado = [
    }
 ];
 
-export function carruselImagenes(id, imagenes, opciones = {}) {
+function carruselImagenes(id, imagenes, opciones = {}) {
    return new Promise((resolve) => {
       const contenedor = document.getElementById(id);
       contenedor.innerHTML = `
@@ -73,4 +75,29 @@ export function carruselImagenes(id, imagenes, opciones = {}) {
          resolve(splide);
       });
    });
-}
+};
+
+document.addEventListener("DOMContentLoaded", async() => {
+   const rutaActual = window.location.pathname;
+   const barraNavegación = document.querySelectorAll(".nav-item a");
+   barraNavegación.forEach(item => {
+      if (item.getAttribute("href") === rutaActual || item.href === window.location.href) {
+         item.classList.add('active');
+      }
+   })
+   const fechaActual = document.getElementById("fechaActual");
+   if(fechaActual) {
+      const hoy = Date.now();
+      const formatoFecha = format(hoy, "d 'de' MMMM 'de' yyyy", {
+         locale: es
+      })
+      fechaActual.innerText = `Receta actualizada a ${formatoFecha}`;
+   }
+   if (document.getElementById("carruselLomoSaltado")) {
+      carruselImagenes("carruselLomoSaltado", imagenesLomoSaltado, {
+         interval: 5000,
+         arrows: false,
+         pagination: false
+      });
+   }
+});
