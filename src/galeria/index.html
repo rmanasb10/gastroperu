@@ -5,16 +5,19 @@
       <title>Gastro Perú Galería</title>
       <meta name="description" content="Espacio de Gastro Perú dedicado a una galería de las mejoras recetas seleccionadas por el equipo de Gastro Perú">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="preload" href="../css/main.scss" as="style" onload="this.onload=null;this.rel='stylesheet'">
-      <noscript><link rel="stylesheet" href="../css/main.scss"></noscript>
+      <link rel="stylesheet" href="../css/main.scss">
       <script type="module" src="../script/script.js"></script>
+      <link rel="preload" as="image"
+         imagesrcset="../img/GastroPeru.jpg?as=webp&width=400&quality=75 1x,
+                     ../img/GastroPeru.jpg?as=webp&width=600&quality=75 1.5x,
+                     ../img/GastroPeru.jpg?as=webp&width=800&quality=75 2x"
+         fetchpriority="high">
       <link rel="preload" as="image"
          href="../img/pescado_crudo.jpg?as=webp&width=460&quality=80"
          imagesrcset="../img/pescado_crudo.jpg?as=webp&width=460&quality=80 460w,
                      ../img/pescado_crudo.jpg?as=webp&width=700&quality=80 700w,
                      ../img/pescado_crudo.jpg?as=webp&width=800&quality=75 800w"
-         imagesizes="(min-width: 1025px) 800px, (min-width: 460px) 700px, 460px"
-         fetchpriority="high">
+         imagesizes="(min-width: 1025px) 800px, (min-width: 460px) 700px, 460px">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
       <link rel="stylesheet"
@@ -40,7 +43,6 @@
                      alt="Imagen de un plato de ceviche en formato png"
                      width="1920" height="1080"
                      loading="eager"
-                     fetchpriority="high"
                      decoding="async"
                   >
                </figure>
