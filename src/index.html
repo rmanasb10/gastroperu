@@ -5,21 +5,22 @@
       <title>Gastro Perú</title>
       <meta name="description" content="Explora la rica y variada gastronomía peruana, una de las más reconocidas en el mundo entero por su calidad y versatilidad. Descubre recetas tradicionales y modernas del amplio abanico gastronómico del Perú que reflejan la diversidad del país. Aquí encontrarás un blog con las últimas novedades, un gran recetario organizado en categorías y unos cursos on-line para que puedas disfrutar de esta cocina desde casa.">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="css/main.scss">
-      <link rel="preload" as="image"
-         imagesrcset="img/GastroPeru.jpg?as=webp&width=400&quality=75 1x,
-                     img/GastroPeru.jpg?as=webp&width=600&quality=75 1.5x,
-                     img/GastroPeru.jpg?as=webp&width=800&quality=75 2x"
-         fetchpriority="high">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+      <link rel="preload"
+            as="image"
+            href="img/GastroPeru.jpg?as=webp&width=800&quality=75"
+            imagesrcset="img/GastroPeru.jpg?as=webp&width=400&quality=75 400w,
+                        img/GastroPeru.jpg?as=webp&width=600&quality=75 600w,
+                        img/GastroPeru.jpg?as=webp&width=800&quality=75 800w"
+            imagesizes="100vw"
+            fetchpriority="high">
+      <link rel="stylesheet" href="css/main.scss">
       <link rel="stylesheet"
-         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-         media="print" onload="this.media='all'">
-      <noscript>
-         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap">
-      </noscript>
-      <link rel="icon" href="img/favicon.ico">
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=optional"
+            media="print"
+            onload="this.media='all'">
+      <link rel="icon" href="img/favicon.ico" type="image/x-icon">
    </head>
    <body class="container">
       <include src="componentes/header.html"></include>

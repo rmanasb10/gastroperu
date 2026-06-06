@@ -5,23 +5,23 @@
       <title>Gastro Perú Categorías</title>
       <meta name="description" content="Espacio de Gastro Perú dedicado a una selección de recetas ordenadas en cuatro importantes categorías. Recetas tradicionales, entrantes, platos principales y postres. Esta sección se actualiza mostrando las dos recetas más destacadas por categoría">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="../css/main.scss">
-      <script type="module" src="../script/script.js"></script>
-      <link rel="preload" as="image"
-      imagesrcset="../img/GastroPeru.jpg?as=webp&width=400&quality=75 400w,
-                     ../img/GastroPeru.jpg?as=webp&width=600&quality=75 600w,
-                     ../img/GastroPeru.jpg?as=webp&width=800&quality=75 800w"
-      imagesizes="(min-width: 1025px) 800px, (min-width: 768px) 700px, (min-width: 460px) 460px, 200px"
-      fetchpriority="high">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-      <link rel="preload" as="style"
-         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-         onload="this.onload=null;this.rel='stylesheet'">
-      <noscript>
-         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap">
-      </noscript>
-      <link rel="icon" href="../img/favicon.ico">
+      <link rel="preload"
+            as="image"
+            href="../img/GastroPeru.jpg?as=webp&width=800&quality=75"
+            imagesrcset="../img/GastroPeru.jpg?as=webp&width=400&quality=75 400w,
+                        ../img/GastroPeru.jpg?as=webp&width=600&quality=75 600w,
+                        ../img/GastroPeru.jpg?as=webp&width=800&quality=75 800w"
+            imagesizes="(min-width: 1025px) 800px, (min-width: 768px) 700px, 100vw"
+            fetchpriority="high">
+      <link rel="stylesheet" href="../css/main.scss">
+      <link rel="preload"
+            as="style"
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=optional"
+            onload="this.onload=null;this.rel='stylesheet'">
+      <script type="module" src="../script/script.js" defer></script>
+      <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
    </head>
    <body class="container">
       <include src="componentes/header.html"></include>

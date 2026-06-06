@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-   <meta charset="utf-8">
-   <title>Gastro Perú Receta Ceviche</title>
-   <meta name="description" content="Descubre la receta de ceviche seleccionada por el equipo de Gastro Perú">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="css/main.scss">
-   <script type="module" src="script/carruselCeviche.js" defer></script>
-   <link rel="preload" as="image"
-      imagesrcset="img/GastroPeru.jpg?as=webp&width=400&quality=75 1x,
-                  img/GastroPeru.jpg?as=webp&width=600&quality=75 1.5x,
-                  img/GastroPeru.jpg?as=webp&width=800&quality=75 2x"
-      fetchpriority="high">
-   <link rel="preload" as="image"
-      href="img/ingredientes_ceviche.jpg?as=webp&width=460&quality=80"
-      imagesrcset="img/ingredientes_ceviche.jpg?as=webp&width=460&quality=80 460w, img/ingredientes_ceviche.jpg?as=webp&width=700&quality=80 700w,img/ingredientes_ceviche.jpg?as=webp&width=800&quality=75 800w"
-      imagesizes="(min-width: 1025px) 800px, (min-width: 460px) 700px, 460px">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-   <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-      media="print" onload="this.media='all'">
-   <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap">
-   </noscript>
-   <link rel="icon" href="img/favicon.ico">
-</head>
+   <head>
+      <meta charset="utf-8">
+      <title>Gastro Perú Receta Ceviche</title>
+      <meta name="description" content="Descubre la receta de ceviche seleccionada por el equipo de Gastro Perú">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+      <link rel="preload"
+            as="image"
+            href="img/GastroPeru.jpg?as=webp&width=800&quality=75"
+            imagesrcset="img/GastroPeru.jpg?as=webp&width=400&quality=75 400w,
+                        img/GastroPeru.jpg?as=webp&width=600&quality=75 600w,
+                        img/GastroPeru.jpg?as=webp&width=800&quality=75 800w"
+            imagesizes="100vw"
+            fetchpriority="high">
+      <link rel="stylesheet" href="css/main.scss">
+      <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=optional"
+            media="print"
+            onload="this.media='all'">
+      <script type="module" src="script/carruselCeviche.js"></script>
+      <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+   </head>
    <body class="container">
       <include src="componentes/header.html"></include>
       <main class="receta">
