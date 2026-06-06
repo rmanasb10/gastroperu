@@ -1,4 +1,6 @@
 import {Splide} from '@splidejs/splide'
+import {format} from 'date-fns';
+import {es} from 'date-fns/locale';
 
 import imagenIngredientesCeviche460 from 'url:../img/ingredientes_ceviche.jpg?as=webp&width=460&quality=80'
 import imagenIngredientesCeviche700 from 'url:../img/ingredientes_ceviche.jpg?as=webp&width=700&quality=80'
@@ -12,7 +14,7 @@ import imagenCevicheChoclo460 from 'url:../img/ceviche_choclo.jpg?as=webp&width=
 import imagenCevicheChoclo700 from 'url:../img/ceviche_choclo.jpg?as=webp&width=700&quality=80'
 import imagenCevicheChoclo800 from 'url:../img/ceviche_choclo.jpg?as=webp&width=800&quality=75'
 
-export const imagenesCeviche = [
+const imagenesCeviche = [
    {
       srcset: `${imagenIngredientesCeviche460} 460w, ${imagenIngredientesCeviche700} 700w, ${imagenIngredientesCeviche800} 800w`,
       src: imagenIngredientesCeviche800,
@@ -33,10 +35,9 @@ export const imagenesCeviche = [
    }
 ];
 
-export function carruselImagenes(id, imagenes, opciones = {}) {
+function carruselImagenes(id, imagenes, opciones = {}) {
    return new Promise((resolve) => {
       const contenedor = document.getElementById(id);
-
       contenedor.innerHTML = `
          <section class="splide" id="splide-${id}">
             <div class="splide__track">
@@ -76,3 +77,28 @@ export function carruselImagenes(id, imagenes, opciones = {}) {
       });
    });
 }
+
+document.addEventListener("DOMContentLoaded", async() => {
+   const rutaActual = window.location.pathname;
+   const barraNavegación = document.querySelectorAll(".nav-item a");
+   barraNavegación.forEach(item => {
+      if (item.getAttribute("href") === rutaActual || item.href === window.location.href) {
+         item.classList.add('active');
+      }
+   })
+   const fechaActual = document.getElementById("fechaActual");
+   if(fechaActual) {
+      const hoy = Date.now();
+      const formatoFecha = format(hoy, "d 'de' MMMM 'de' yyyy", {
+         locale: es
+      })
+      fechaActual.innerText = `Receta actualizada a ${formatoFecha}`;
+   }
+   if (document.getElementById("carruselCeviche")) {
+      carruselImagenes("carruselCeviche", imagenesCeviche, {
+         interval: 5000,
+         arrows: false,
+         pagination: false,
+      });
+   }
+});
