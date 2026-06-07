@@ -17,17 +17,33 @@
             fetchpriority="high">
       <link rel="stylesheet" href="css/main.scss">
       <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=optional"
-            media="print"
-            onload="this.media='all'">
-      <script type="module" src="script/carruselCeviche.js"></script>
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=optional">
+      <script type="module" src="script/carruselLomoSaltado.js"></script>
+      <link rel="icon" href="img/favicon.ico" type="image/x-icon">
    </head>
    <body class="container">
       <include src="componentes/header.html"></include>
       <main class="receta">
          <h1>Lomo saltado</h1>
          <p id="fechaActual"></p>
-         <div id="carruselLomoSaltado"></div>
+         <div id="carruselLomoSaltado">
+            <section class="splide" id="splide-carruselLomoSaltado">
+               <div class="splide__track">
+                  <ul class="splide__list">
+                     <li class="splide__slide">
+                        <img
+                           srcset="img/corte_carnes.jpg?as=webp&width=460&quality=80 460w, img/corte_carnes.jpg?as=webp&width=700&quality=80 700w, img/corte_carnes.jpg?as=webp&width=800&quality=75 800w"
+                           sizes="(min-width: 1025px) 800px, (min-width: 460px) 700px, 460px"
+                           src="img/corte_carnes.jpg"
+                           alt="Imagen de los ingredientes de un ceviche"
+                           fetchpriority="high"
+                           loading="eager"
+                           decoding="sync">
+                     </li>
+                  </ul>
+               </div>
+            </section>
+         </div>
          <section>
             <h2>Ingredientes</h2>
             <ul>
@@ -53,7 +69,7 @@
             <img
                srcset="img/lomo_saltado.jpg?as=webp&width=200&quality=75 200w, img/lomo_saltado.jpg?as=webp&width=460&quality=80 460w, img/lomo_saltado.jpg?as=webp&width=700&quality=80 700w, img/lomo_saltado.jpg?as=webp&width=800&quality=75 800w"
                sizes="(min-width: 1025px) 800px, (min-width: 768px) 700px, (min-width: 460px) 460px, 200px"
-               src="img/lomo_saltado.jpg?width=460" alt="Imagen de un plato de lomo saltado" loading="eager" decoding="sync">
+               src="img/lomo_saltado.jpg" alt="Imagen de un plato de lomo saltado" width="800" height="533" loading="lazy" decoding="async">
             <figcaption>Imagen de <a href="https://unsplash.com/es/@rayvenshots">Reyven Shots</a> en <a href="https://unsplash.com/">Unsplash</a></figcaption>
          </figure>
          <section>
@@ -62,7 +78,7 @@
                <p>Es recomendable el uso de salsa de soja peruana y vinagre de vino tinto</p>
                <p>Acompaña este plato con arroz blanco o patatas fritas</p>
          </section>
-         <iframe width="560" height="315" src="https://www.youtube.com/embed/sWXRJbGi6yQ?si=Qo9f1pIFZSNOsmRm" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/sWXRJbGi6yQ?si=Qo9f1pIFZSNOsmRm" title="YouTube video player" frameborder=0 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </main>
       <include src="componentes/footer.html"></include>
    </body>
