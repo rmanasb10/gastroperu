@@ -17,9 +17,7 @@
             fetchpriority="high">
       <link rel="stylesheet" href="css/main.scss">
       <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=optional"
-            media="print"
-            onload="this.media='all'">
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=optional">
       <script type="module" src="script/carruselCeviche.js"></script>
       <link rel="icon" href="img/favicon.ico" type="image/x-icon">
    </head>
@@ -28,7 +26,24 @@
       <main class="receta">
          <h1>Ceviche</h1>
          <p id="fechaActual"></p>
-         <div id="carruselCeviche"></div>
+         <div id="carruselCeviche">
+            <section class="splide" id="splide-carruselCeviche">
+               <div class="splide__track">
+                  <ul class="splide__list">
+                     <li class="splide__slide">
+                        <img
+                           srcset="img/ingredientes_ceviche.jpg?as=webp&width=460&quality=80 460w, img/ingredientes_ceviche.jpg?as=webp&width=700&quality=80 700w, img/ingredientes_ceviche.jpg?as=webp&width=800&quality=75 800w"
+                           sizes="(min-width: 1025px) 800px, (min-width: 460px) 700px, 460px"
+                           src="img/ingredientes_ceviche.jpg"
+                           alt="Imagen de los ingredientes de un ceviche"
+                           fetchpriority="high"
+                           loading="eager"
+                           decoding="sync">
+                     </li>
+                  </ul>
+               </div>
+            </section>
+         </div>
          <section>
             <h2>Ingredientes</h2>
             <ul>
@@ -53,7 +68,7 @@
             <img
                srcset="img/ceviche.jpg?as=webp&width=200&quality=75 200w, img/ceviche.jpg?as=webp&width=460&quality=80 460w, img/ceviche.jpg?as=webp&width=700&quality=80 700w, img/ceviche.jpg?as=webp&width=800&quality=75 800w"
                sizes="(min-width: 1025px) 800px, (min-width: 768px) 700px, (min-width: 460px) 460px, 200px"
-               src="img/ceviche.jpg?width=460" alt="Imagen de un plato de ceviche" loading="eager" decoding="sync">
+               src="img/ceviche.jpg" alt="Imagen de un plato de ceviche" width="800" height="533" loading="lazy" decoding="async">
             <picture>
             <figcaption>Imagen de <a href="https://unsplash.com/es/@weekendtripcreator">Lisa Riabinina</a> en <a href="https://unsplash.com/">Unsplash</a></figcaption>
          </figure>
@@ -64,7 +79,7 @@
                <p>Remojar la cebolla en agua con sal 10 minutos antes de añadirla, suavizará su sabor y le dará un toque crujiente</p>
                <p>Acompañar este plato con camote cocido o choclo, es ideal</p>
          </section>
-         <iframe width="560" height="315" src="https://www.youtube.com/embed/oRw2YNE5kLU?si=O_vXhwqOnuiay5l1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/oRw2YNE5kLU?si=O_vXhwqOnuiay5l1" title="YouTube video player" allow="accelerometer; frameborder=0 autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </main>
       <include src="componentes/footer.html"></include>
    </body>

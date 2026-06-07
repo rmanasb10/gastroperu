@@ -2,10 +2,6 @@ import {Splide} from '@splidejs/splide'
 import {format} from 'date-fns';
 import {es} from 'date-fns/locale';
 
-import imagenIngredientesCeviche460 from 'url:../img/ingredientes_ceviche.jpg?as=webp&width=460&quality=80'
-import imagenIngredientesCeviche700 from 'url:../img/ingredientes_ceviche.jpg?as=webp&width=700&quality=80'
-import imagenIngredientesCeviche800 from 'url:../img/ingredientes_ceviche.jpg?as=webp&width=800&quality=75'
-
 import imagenPescadoCrudo460 from 'url:../img/pescado_crudo.jpg?as=webp&width=460&quality=80'
 import imagenPescadoCrudo700 from 'url:../img/pescado_crudo.jpg?as=webp&width=700&quality=80'
 import imagenPescadoCrudo800 from 'url:../img/pescado_crudo.jpg?as=webp&width=800&quality=75'
@@ -16,65 +12,35 @@ import imagenCevicheChoclo800 from 'url:../img/ceviche_choclo.jpg?as=webp&width=
 
 const imagenesCeviche = [
    {
-      srcset: `${imagenIngredientesCeviche460} 460w, ${imagenIngredientesCeviche700} 700w, ${imagenIngredientesCeviche800} 800w`,
-      src: imagenIngredientesCeviche800,
-      alt: "Imagen de los ingredientes de un ceviche",
-      isLCP: true
-   },
-   {
       srcset: `${imagenPescadoCrudo460} 460w, ${imagenPescadoCrudo700} 700w, ${imagenPescadoCrudo800} 800w`,
       src: imagenPescadoCrudo800,
       alt: "Imagen de un pescado fresco crudo",
-      isLCP: false
    },
    {
       srcset: `${imagenCevicheChoclo460} 460w, ${imagenCevicheChoclo700} 700w, ${imagenCevicheChoclo800} 800w`,
       src: imagenCevicheChoclo800,
       alt: "Imagen de un ceviche con choclo",
-      isLCP: false
    }
 ];
 
 function carruselImagenes(id, imagenes, opciones = {}) {
    return new Promise((resolve) => {
       const contenedor = document.getElementById(id);
-      contenedor.innerHTML = `
-         <section class="splide" id="splide-${id}">
-            <div class="splide__track">
-               <ul class="splide__list">
-                  ${imagenes.map(imagen => `
-                     <li class="splide__slide">
-                        <img
-                        srcset="${imagen.srcset}"
-                        sizes="(min-width: 1025px) 800px, (min-width: 460px) 700px, 460px"
-                        src="${imagen.src}"
-                        alt="${imagen.alt}"
-                        style="width:100%; display:block;"
-                        ${imagen.isLCP
-                           ? 'fetchpriority="high" loading="eager" decoding="sync"'
-                           : 'loading="lazy" decoding="async"'
-                        }>
-                     </li>`
-                  ).join('')}
-               </ul>
-            </div>
-         </section>`;
-
-      requestAnimationFrame(() => {
-         const elementoSplide = document.getElementById(`splide-${id}`);
-         if (!elementoSplide) {
-            resolve(null);
-            return;
-         }
-         const splide = new Splide(elementoSplide, {
-            type: 'loop',
-            perPage: 1,
-            autoplay: true,
-            ...opciones
-         });
-         splide.mount();
-         resolve(splide);
+      const lista = contenedor.querySelector(".splide__list");
+      imagenes.forEach(imagen => {
+         const li = document.createElement("li");
+         li.className = "splide__slide";
+         li.innerHTML = `<img srcset="${imagen.srcset}" sizes="(min-width: 1025px) 800px, (min-width: 460px) 700px, 460px" src="${imagen.src}" alt="${imagen.alt}" width="800" height="533" loading="lazy" decoding="async" style="width:100%; display:block;">`;
+         lista.appendChild(li);
+      })
+      const splide = new Splide(contenedor.querySelector(".splide"), {
+         type: 'loop',
+         perPage: 1,
+         autoplay: true,
+         ...opciones
       });
+      splide.mount();
+      resolve(splide);
    });
 }
 
